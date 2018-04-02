@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/fuelTypeView"
+        android:layout_width="112dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/petrolDetailStr"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <RadioGroup
+        android:id="@+id/fuelCategoryRadioGroup"
+        android:layout_width="395dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="215dp"
+        android:layout_marginTop="126dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/submitButton"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <RadioButton
+            android:id="@+id/fuelCategoryVPower"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:width="320dp"
+            android:checked="false"
+            android:text="@string/fuelVpowerStr"
+            tools:layout_editor_absoluteX="34dp"
+            tools:layout_editor_absoluteY="145dp" />
+
+        <RadioButton
+            android:id="@+id/fuelCategoryUnleaded"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="90dp"
+            android:width="320dp"
+            android:checked="false"
+            android:duplicateParentState="false"
+            android:text="@string/fuelUnleadedStr"
+            tools:layout_editor_absoluteX="265dp"
+            tools:layout_editor_absoluteY="163dp" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/fuelQuantityRadioGroup"
+        android:layout_width="395dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="100dp"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="parent">
+
+        <RadioButton
+            android:id="@+id/fullTankRadioBtn"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:text="@string/fullTankStr"
+            app:layout_constraintBaseline_toBaselineOf="@+id/radioButton4"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:layout_editor_absoluteX="34dp"
+            tools:layout_editor_absoluteY="145dp" />
+
+        <RadioButton
+            android:id="@+id/amountRadioBtn"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            android:text="@string/amountStr"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioButton2" />
+
+        <RadioButton
+            android:id="@+id/quantityRadioBtn"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="50dp"
+            android:text="@string/quantityStr"
+            app:layout_constraintBaseline_toBaselineOf="@+id/radioButton4"
+            app:layout_constraintRight_toRightOf="parent" />
+    </RadioGroup>
+
+
+    <TextView
+        android:id="@+id/enterQty"
+        android:layout_width="wrap_content"
+        android:layout_height="28dp"
+        android:layout_marginStart="24dp"
+        android:text="@string/enterQty"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editQty"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <EditText
+        android:id="@+id/editQty"
+        android:layout_width="wrap_content"
+        android:layout_height="39dp"
+        android:layout_marginBottom="94dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="88dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintBottom_toBottomOf="@+id/submitButton"
+        app:layout_constraintStart_toEndOf="@+id/enterQty"
+        app:layout_constraintTop_toTopOf="@+id/fuelQuantityRadioGroup"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="158dp"
+        android:text="@string/submitButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fuelCategoryRadioGroup"
+        app:layout_constraintVertical_bias="0.767" />
+
+</android.support.constraint.ConstraintLayout>

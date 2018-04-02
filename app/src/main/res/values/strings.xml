@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">App4</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_chat_box">ChatBox</string>
+<string name="welcomeMsgStr">Namaskara,I cannot speak or hear . Please help me to serve you</string>
+    <string name="indicateStr">Please Indicate your choice</string>
+    <string name="fuelTypePetrolStr">Petrol</string>
+    <string name="fuelTypeDieselStr">Diesel</string>
+    <string name="petrolDetailStr">Petrol Details</string>
+    <string name="StartButtonStr">Start</string>
+    <string name="fuelVpowerStr">Shell V-Power</string>
+    <string name="fuelUnleadedStr">Shell Unleaded</string>
+    <string name="fullTankStr">Full Tank</string>
+    <string name="amountStr">Amount</string>
+    <string name="quantityStr">Quantity</string>
+    <string name="selectFuelTypeStr">Please select fuel type</string>
+    <string name="submitButton">SUBMIT</string>
+    <string name="enterQty">Enter</string>
+</resources>
