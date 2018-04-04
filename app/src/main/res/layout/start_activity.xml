@@ -4,69 +4,75 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.anshulkumar.shellapplication.StartActivity"
-    tools:layout_editor_absoluteY="81dp">
-
-    <TextView
-        android:id="@+id/welcomeMsg"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="235dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/welcomeMsgStr"
-        app:layout_constraintBottom_toTopOf="@+id/startButton"
+    tools:context="com.example.mushtaqmir.app4.StartActivity">
+<ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:foregroundGravity="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/indicate"
-        android:layout_width="383dp"
-        android:layout_height="54dp"
-        android:layout_marginBottom="55dp"
-        android:layout_marginEnd="16dp"
-        android:text="@string/indicateStr"
-        app:layout_constraintBottom_toTopOf="@+id/fuelTypeRadioGroup"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcomeMsg" />
-
-    <RadioGroup
-        android:id="@+id/fuelTypeRadioGroup"
-        android:layout_width="395dp"
-        android:layout_height="56dp"
-        android:layout_marginBottom="295dp"
-        android:orientation="horizontal"
-        android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/indicate">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
 
-        <RadioButton
-            android:id="@+id/fuelTypePetrol"
-            android:layout_width="94dp"
+        <TextView
+            android:id="@+id/indicate"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="190dp"
-            android:width="320dp"
-            android:checked="false"
-            android:text="@string/fuelTypePetrolStr"
-            tools:layout_editor_absoluteX="34dp"
-            tools:layout_editor_absoluteY="145dp" />
+            android:layout_marginBottom="55dp"
+            android:gravity="center_horizontal"
+            android:text="@string/indicateStr"
+            app:layout_constraintBottom_toTopOf="@+id/fuelTypeRadioGroup" />
 
-        <RadioButton
-            android:id="@+id/fuelTypeDiesel"
-            android:layout_width="94dp"
+
+        <RadioGroup
+            android:id="@+id/fuelTypeRadioGroup"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="120dp"
-            android:width="320dp"
-            android:checked="false"
-            android:duplicateParentState="false"
-            android:text="@string/fuelTypeDieselStr"
-            tools:layout_editor_absoluteX="265dp"
-            tools:layout_editor_absoluteY="163dp" />
-    </RadioGroup>
+            android:layout_marginBottom="295dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="100dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/indicate">
+
+
+            <RadioButton
+                android:id="@+id/fuelTypePetrol"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="57dp"
+                android:width="320dp"
+                android:checked="false"
+                android:text="@string/fuelTypePetrolStr"
+                tools:layout_editor_absoluteX="34dp"
+                tools:layout_editor_absoluteY="145dp" />
+
+            <RadioButton
+                android:id="@+id/fuelTypeDiesel"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:width="320dp"
+                android:checked="false"
+                android:text="@string/fuelTypeDieselStr"
+                tools:layout_editor_absoluteX="265dp"
+                tools:layout_editor_absoluteY="163dp" />
+        </RadioGroup>
 
     <Button
         android:id="@+id/startButton"
@@ -75,8 +81,11 @@
         android:layout_marginBottom="258dp"
         android:text="@string/StartButtonStr"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fuelTypeRadioGroup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcomeMsg" />
+        />
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
 
 </android.support.constraint.ConstraintLayout>

@@ -14,8 +14,8 @@ import java.util.ArrayList;
 
 public class DbHandler extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION=1;
-    private static final String DATABASE_NAME="app.db";
+    public static final int DATABASE_VERSION=1;
+    public static final String DATABASE_NAME="app.db";
     private static final String TABLE_TEMPLATES ="template";
     private static final String COLUMN_ID="id";
     private static final String COLUMN_MESSAGES="messages";

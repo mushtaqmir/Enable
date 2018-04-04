@@ -2,8 +2,10 @@ package com.example.mushtaqmir.app4;
 
 
 import java.io.Serializable;
+import java.util.Date;
 
 public class OrderDetails implements Serializable{
+
 
     String fuelType;
     String category;
@@ -12,6 +14,7 @@ public class OrderDetails implements Serializable{
     boolean fullTank;
     int fuelQtyAmtIndentifier;
     String ModeOfPayment;
+    Date orderDateTime;
 
 
 
@@ -68,6 +71,13 @@ public class OrderDetails implements Serializable{
 
     public void setModeOfPayment(String modeOfPayment) {
         this.ModeOfPayment = modeOfPayment;
+    }
+    public Date getOrderDateTime() {
+        return orderDateTime;
+    }
+
+    public void setOrderDateTime(Date orderDateTime) {
+        this.orderDateTime = orderDateTime;
     }
 
 }

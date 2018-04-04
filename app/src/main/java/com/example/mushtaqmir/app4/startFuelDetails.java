@@ -22,70 +22,105 @@ public class startFuelDetails extends AppCompatActivity {
     public static final String AMOUNT = "Amount";
     public static final String QUANTITY = "Quantity";
     public static final double DOUBLE_ZERO = 0.00;
+    public static final int BUTTON_PRESED_DISABLED = 0;
+    public static final int BUTTON_PRESED_ENABLED = 1;
+    public static String fuelType = "";
+    public static int buttonPressed = BUTTON_PRESED_DISABLED;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.start_fuel_pg);
-
+        //=----------------------------------
         final OrderDetails orderDetails = new OrderDetails();
-        // Get the Intent that started this activity and extract the string
-        Intent intent = getIntent();
-        final String fuelType = intent.getStringExtra(StartActivity.EXTRA_MESSAGE);
-        final String editFlag = intent.getStringExtra("Edit Type");
-
         String category ="";
         final double fuelQty = DOUBLE_ZERO;
         final double fuelAmount=DOUBLE_ZERO;
         final boolean fullTank;
-        orderDetails.setFuelType(fuelType);
-        // Capture the layout's TextView and set the string as its text
-        TextView textView = findViewById(R.id.fuelTypeView);
-        textView.setText(fuelType+ " "+ "Details");
-        if(intent != null) {
-            final Resources res = getResources();
+        final Resources res = getResources();
+        final RadioButton fuelCategoryVPower = (RadioButton) findViewById(R.id.fuelCategoryVPower);
+        final RadioButton fuelCategoryUnleaded = (RadioButton) findViewById(R.id.fuelCategoryUnleaded);
+        final RadioGroup fuelQuantityRadioGroup = (RadioGroup) findViewById(R.id.fuelQuantityRadioGroup);
+        final RadioButton fullTankRadioBtn = (RadioButton) findViewById(R.id.fullTankRadioBtn);
+        final RadioButton amountRadioBtn = (RadioButton) findViewById(R.id.amountRadioBtn);
+        final RadioButton quantityRadioBtn = (RadioButton) findViewById(R.id.quantityRadioBtn);
+        final TextView enterQty = (TextView) findViewById(R.id.enterQty);
+        final EditText editQty = (EditText) findViewById(R.id.editQty);
+        final Button submitButton = (Button) findViewById(R.id.submitButton);
 
-            final RadioGroup fuelCategoryRadioGroup = (RadioGroup) findViewById(R.id.fuelCategoryRadioGroup);
-            final RadioButton fuelCategoryVPower = (RadioButton) findViewById(R.id.fuelCategoryVPower);
-            final RadioButton fuelCategoryUnleaded = (RadioButton) findViewById(R.id.fuelCategoryUnleaded);
-            final RadioGroup fuelQuantityRadioGroup = (RadioGroup) findViewById(R.id.fuelQuantityRadioGroup);
-            final RadioButton fullTankRadioBtn = (RadioButton) findViewById(R.id.fullTankRadioBtn);
-            final RadioButton amountRadioBtn = (RadioButton) findViewById(R.id.amountRadioBtn);
-            final RadioButton quantityRadioBtn = (RadioButton) findViewById(R.id.quantityRadioBtn);
-            final TextView enterQty = (TextView) findViewById(R.id.enterQty);
-            final EditText editQty = (EditText) findViewById(R.id.editQty);
-            final Button submitButton = (Button) findViewById(R.id.submitButton);
+        final RadioGroup fuelTypeRadioGroup = (RadioGroup) findViewById(R.id.fuelTypeRadioGroup);
+        final RadioButton fuelTypePetrol = (RadioButton) findViewById(R.id.fuelTypePetrol);
+        final RadioButton fuelTypeDiesel = (RadioButton) findViewById(R.id.fuelTypeDiesel);
+        final TextView textView = findViewById(R.id.fuelTypeView);
+        final RadioGroup fuelCategoryRadioGroup = (RadioGroup) findViewById(R.id.fuelCategoryRadioGroup);
+        fuelTypeRadioGroup.setVisibility(View.VISIBLE);
+        fuelCategoryRadioGroup.setVisibility(View.INVISIBLE);
+        textView.setVisibility(View.INVISIBLE);
+        fuelQuantityRadioGroup.setVisibility(View.INVISIBLE);
+        enterQty.setVisibility(View.INVISIBLE);
+        editQty.setVisibility(View.INVISIBLE);
+        orderDetails.setFuelAmount(DOUBLE_ZERO);
+        submitButton.setVisibility(View.INVISIBLE);
 
-            fuelQuantityRadioGroup.setVisibility(View.INVISIBLE);
-            enterQty.setVisibility(View.INVISIBLE);
-            editQty.setVisibility(View.INVISIBLE);
-            orderDetails.setFuelAmount(DOUBLE_ZERO);
-            submitButton.setVisibility(View.INVISIBLE);
 
-            if (fuelType.equals(FUEL_TYPE_PETROL)) { //Petrol
-                fuelCategoryVPower.setText(String.format(res.getString(R.string.fuelVpowerStr) + " " + FUEL_TYPE_PETROL));
-                fuelCategoryUnleaded.setText(String.format(res.getString(R.string.fuelUnleadedStr) + " " + FUEL_TYPE_PETROL));
-            } else {    //Diesel
-                fuelCategoryVPower.setText(String.format(res.getString(R.string.fuelVpowerStr) + " " + FUEL_TYPE_DIESEL));
-                fuelCategoryUnleaded.setText(String.format(res.getString(R.string.fuelUnleadedStr) + " " + FUEL_TYPE_DIESEL));
+        fuelTypeRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                if(fuelTypePetrol.isChecked()){
+                    fuelType = fuelTypePetrol.getText().toString(); //Petrol
+                    fuelCategoryVPower.setText(String.format(res.getString(R.string.fuelVpowerStr) + " " + FUEL_TYPE_PETROL));
+                    fuelCategoryUnleaded.setText(String.format(res.getString(R.string.fuelUnleadedStr) + " " + FUEL_TYPE_PETROL));
+                    fuelCategoryRadioGroup.setVisibility(View.VISIBLE);
+                    textView.setText(fuelType+ " "+ "Details");
+                    textView.setVisibility(View.VISIBLE);
+                    orderDetails.setFuelType(fuelType);
+                    fuelCategoryRadioGroup.clearCheck();
+                    fuelQuantityRadioGroup.setVisibility(View.INVISIBLE);
+                    enterQty.setVisibility(View.INVISIBLE);
+                    editQty.setVisibility(View.INVISIBLE);
+                    submitButton.setVisibility(View.INVISIBLE);
+                }
+                else if(fuelTypeDiesel.isChecked()){
+                    fuelType = fuelTypeDiesel.getText().toString(); //Diesel
+                    fuelCategoryVPower.setText(String.format(res.getString(R.string.fuelVpowerStr) + " " + FUEL_TYPE_DIESEL));
+                    fuelCategoryUnleaded.setText(String.format(res.getString(R.string.fuelUnleadedStr) + " " + FUEL_TYPE_DIESEL));
+                    fuelCategoryRadioGroup.setVisibility(View.VISIBLE);
+                    textView.setText(fuelType+ " "+ "Details");
+                    textView.setVisibility(View.VISIBLE);
+                    orderDetails.setFuelType(fuelType);
+                    fuelCategoryRadioGroup.clearCheck();
+                    fuelQuantityRadioGroup.setVisibility(View.INVISIBLE);
+                    enterQty.setVisibility(View.INVISIBLE);
+                    editQty.setVisibility(View.INVISIBLE);
+                    submitButton.setVisibility(View.INVISIBLE);
+
+                }
             }
+        });
+
 
             fuelCategoryRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
                     fuelQuantityRadioGroup.setVisibility(View.VISIBLE);
-                    if(fuelCategoryVPower.isChecked()){
+                    enterQty.setVisibility(View.INVISIBLE);
+                    editQty.setVisibility(View.INVISIBLE);
+                    submitButton.setVisibility(View.INVISIBLE);
+                    fuelQuantityRadioGroup.clearCheck();
+                    if (fuelCategoryVPower.isChecked()) {
                         orderDetails.setCategory(fuelCategoryVPower.getText().toString());
-                    }
-                    else if(fuelCategoryUnleaded.isChecked()){
+                    } else if (fuelCategoryUnleaded.isChecked()) {
                         orderDetails.setCategory(fuelCategoryUnleaded.getText().toString());
                     }
                 }
             });
 
+
             fuelQuantityRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener(){
                 @Override
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
+
                 if(fullTankRadioBtn.isChecked()){
                     submitButton.setVisibility(View.VISIBLE);
                     enterQty.setVisibility(View.INVISIBLE);
@@ -159,7 +194,7 @@ public class startFuelDetails extends AppCompatActivity {
                         }
                     } );
         }
-    }
+
 
    public double TextToDouble(String text) {
        double value = 0.00;
