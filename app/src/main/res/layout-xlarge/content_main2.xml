@@ -65,22 +65,22 @@
             tools:layout_editor_absoluteY="529dp" />
 
     </LinearLayout>
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_marginTop="70dp"
-    android:layout_marginBottom="60dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="60dp">
 
-    <ImageView
-        android:id="@+id/pumpImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="400dp"
-        android:layout_alignBottom="@+id/linearLayout"
-        android:layout_alignEnd="@+id/linearLayout2"
-        android:scaleType="fitCenter"
-        android:src="@drawable/pump" />
+        <ImageView
+            android:id="@+id/pumpImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="400dp"
+            android:layout_alignBottom="@+id/linearLayout"
+            android:layout_alignEnd="@+id/linearLayout2"
+            android:scaleType="fitCenter"
+            android:src="@drawable/pump" />
 
-</LinearLayout>
+    </LinearLayout>
 
 
 </RelativeLayout>

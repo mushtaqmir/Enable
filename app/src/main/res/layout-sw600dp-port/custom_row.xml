@@ -5,20 +5,16 @@
     android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/customerImage"
+        android:id="@+id/templateImage"
         android:layout_width="5dp"
-        android:layout_height="50dp"
+        android:layout_height="57dp"
         android:layout_weight="1"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        app:srcCompat="@drawable/customer"
-        android:background="@drawable/oval"/>
+        app:srcCompat="@drawable/speakerphone" />
 
     <TextView
-        android:id="@+id/customerText"
-        android:layout_width="550dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="5dp"
+        android:id="@+id/templateText"
+        android:layout_width="500dp"
+        android:layout_height="57dp"
         android:layout_weight="1"
         android:text="TextView" />
 
