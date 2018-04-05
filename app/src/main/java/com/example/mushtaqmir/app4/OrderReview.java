@@ -12,6 +12,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.IOException;
 
 
 public class OrderReview extends AppCompatActivity{
@@ -22,7 +23,12 @@ public class OrderReview extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.order_review);
 
-        mydb = new DbHandler(this,null,null,1);
+        try{
+            mydb = new DbHandler(this,Util.getProperty("DATABASE_NAME",this),null,1);
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
 
         // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();

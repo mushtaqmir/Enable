@@ -16,6 +16,8 @@ import android.widget.ListView;
 import android.speech.tts.TextToSpeech;
 import android.widget.EditText;
 import android.widget.Button;
+
+import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +38,12 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        dbHandler=new DbHandler(this,null,null,1);
+        try{
+            dbHandler=new DbHandler(this,Util.getProperty("DATABASE_NAME",this),null,1);
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
         String[] messageList={"Hi, how are you.","How can i help you.","Welcome"};
         msgList=new ArrayList<String>(Arrays.asList(messageList));
 

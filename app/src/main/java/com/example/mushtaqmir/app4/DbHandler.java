@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -20,51 +21,48 @@ import java.util.TimeZone;
 
 public class DbHandler extends SQLiteOpenHelper {
 
-    public static final int DATABASE_VERSION=1;
-    public static final String DATABASE_NAME="app.db";
-    private static final String TABLE_TEMPLATES ="template";
-    private static final String COLUMN_ID="id";
-    private static final String COLUMN_MESSAGES="messages";
+
+    private  String TABLE_TEMPLATES;
+    private  String COLUMN_ID;
+    private  String COLUMN_MESSAGES;
 
       //Changes for order history
-      public static final String TABLE_NAME = "order_history";
-      public static final String COLUMN_TIMESTAMP = "timestamp";
-      public static final String ID = "ORDER_ID";
-      public static final String FUEL_TYPE = "FUEL_TYPE";
-      public static final String FUEL_CATEGORY = "FUEL_CATEGORY";
-      public static final String FUEL_QTY = "FUEL_QTY";
-      public static final String FUEL_AMOUNT = "FUEL_AMOUNT";
-      public static final String FULL_TANK = "FULL_TANK";
-      public static final String MODE_OF_PAYMENT = "MODE_OF_PAYMENT";
-
-      // Create table SQL query
-      public static final String CREATE_TABLE_ORDER_HISTORY =
-              "CREATE TABLE " + TABLE_NAME + "("
-                      + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
-                      + FUEL_TYPE + " TEXT,"
-                      + FUEL_CATEGORY + " TEXT,"
-                      + FUEL_QTY + " DECIMAL(17,2),"
-                      + FUEL_AMOUNT + " DECIMAL(17,2),"
-                      + FULL_TANK + " BOOLEAN,"
-                      + MODE_OF_PAYMENT + " TEXT,"
-                      + COLUMN_TIMESTAMP + " DATETIME DEFAULT CURRENT_TIMESTAMP"
-                      + ")";
-
-      public static final String query="CREATE TABLE "+ TABLE_TEMPLATES +" (" +
-              COLUMN_ID +" INTEGER PRIMARY KEY AUTOINCREMENT, " +
-              COLUMN_MESSAGES + " TEXT " +
-              ");";
+      public  String TABLE_NAME;
+      public  String COLUMN_TIMESTAMP;
+      public  String ID;
+      public  String FUEL_TYPE;
+      public  String FUEL_CATEGORY;
+      public  String FUEL_QTY;
+      public  String FUEL_AMOUNT;
+      public  String FULL_TANK;
+      public  String MODE_OF_PAYMENT;
 
 
-      public DbHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
-        super(context, DATABASE_NAME, factory, DATABASE_VERSION);
 
+
+      public DbHandler(Context context, String dataBase, SQLiteDatabase.CursorFactory factory, int version) throws IOException {
+        super(context, dataBase, factory, version);
+         //Template Table
+          TABLE_TEMPLATES=Util.getProperty("TABLE_TEMPLATES",context);
+          COLUMN_ID=Util.getProperty("COLUMN_ID",context);
+          COLUMN_MESSAGES=Util.getProperty("COLUMN_MESSAGES",context);
+
+          //Table Order
+          TABLE_NAME=Util.getProperty("TABLE_NAME",context);
+          COLUMN_TIMESTAMP=Util.getProperty("COLUMN_TIMESTAMP",context);
+          ID=Util.getProperty("ID",context);
+          FUEL_TYPE=Util.getProperty("FUEL_TYPE",context);
+          FUEL_CATEGORY=Util.getProperty("FUEL_CATEGORY",context);
+          FUEL_QTY=Util.getProperty("FUEL_QTY",context);
+          FUEL_AMOUNT=Util.getProperty("FUEL_AMOUNT",context);
+          FULL_TANK=Util.getProperty("FULL_TANK",context);
+          MODE_OF_PAYMENT=Util.getProperty("MODE_OF_PAYMENT",context);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(query);
-        db.execSQL(CREATE_TABLE_ORDER_HISTORY);
+        db.execSQL(getTemplateQuery());
+        db.execSQL(getOrderHistoryQuery());
     }
 
     @Override
@@ -163,4 +161,30 @@ public class DbHandler extends SQLiteOpenHelper {
         }
         return startDate;
     }
+
+    public String getOrderHistoryQuery(){
+
+        String CREATE_TABLE_ORDER_HISTORY =
+                "CREATE TABLE " + TABLE_NAME + "("
+                        + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                        + FUEL_TYPE + " TEXT,"
+                        + FUEL_CATEGORY + " TEXT,"
+                        + FUEL_QTY + " DECIMAL(17,2),"
+                        + FUEL_AMOUNT + " DECIMAL(17,2),"
+                        + FULL_TANK + " BOOLEAN,"
+                        + MODE_OF_PAYMENT + " TEXT,"
+                        + COLUMN_TIMESTAMP + " DATETIME DEFAULT CURRENT_TIMESTAMP"
+                        + ")";
+        return CREATE_TABLE_ORDER_HISTORY;
+    }
+
+    public String getTemplateQuery(){
+
+        String query="CREATE TABLE "+ TABLE_TEMPLATES +" (" +
+                COLUMN_ID +" INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_MESSAGES + " TEXT " +
+                ");";
+        return query;
+    }
+
 }
