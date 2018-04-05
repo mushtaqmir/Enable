@@ -12,16 +12,17 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-/**
- * Created by Anshul.Kumar on 3/26/2018.
- */
+
 
 public class OrderReview extends AppCompatActivity{
 
+    DbHandler mydb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.order_review);
+
+        mydb = new DbHandler(this,null,null,1);
 
         // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();
@@ -36,6 +37,8 @@ public class OrderReview extends AppCompatActivity{
             final Button confirmBtn = (Button) findViewById(R.id.confirmBtn);
             final Button editBtn = (Button) findViewById(R.id.editBtn);
             final TextView paymentMode = (TextView) findViewById(R.id.paymentMode);
+
+
             if(orderDetails!=null) {
                 fuelType.setText(orderDetails.getFuelType());
                 fuelCategory.setText(orderDetails.getCategory());
@@ -60,11 +63,17 @@ public class OrderReview extends AppCompatActivity{
                 confirmBtn.setOnClickListener(
                         new View.OnClickListener(){
                             public void onClick(View v){
-
-                                Intent launchOrderReview= new Intent(OrderReview.this,OrderConfirm.class);
-                                launchOrderReview.putExtra("Order Details Class",orderDetails);
-                                launchOrderReview.putExtra("Edit Type",0);
-                                startActivity(launchOrderReview);
+                                boolean isInserted = mydb.insertOrder(orderDetails);
+                                if(isInserted) {
+                                    Intent launchOrderReview = new Intent(OrderReview.this, OrderConfirm.class);
+                                    launchOrderReview.putExtra("Order Details Class", orderDetails);
+                                    launchOrderReview.putExtra("Edit Type", 0);
+                                    startActivity(launchOrderReview);
+                                }
+                                else{
+                                    Toast.makeText(getApplicationContext(), "Data Cannot be inserted properly",
+                                            Toast.LENGTH_LONG).show();
+                                }
 
                             }
                         } );
@@ -72,8 +81,10 @@ public class OrderReview extends AppCompatActivity{
                         new View.OnClickListener(){
                             public void onClick(View v){
                                 onBackPressed();
+
                             }
                         } );
+
             }
         }
     }

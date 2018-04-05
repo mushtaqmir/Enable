@@ -56,7 +56,7 @@ public class ActivityMain extends Activity {
         });
     }
     public void startAction(){
-        Intent intent=new Intent(this,StartActivity.class);
+        Intent intent=new Intent(this,startFuelDetails.class);
         startActivity(intent);
     }
 
