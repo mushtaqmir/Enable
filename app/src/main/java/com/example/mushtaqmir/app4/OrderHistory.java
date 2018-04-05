@@ -19,7 +19,7 @@ import de.codecrafters.tableview.toolkit.SimpleTableHeaderAdapter;
 
 public class OrderHistory extends AppCompatActivity {
 
-    String[] spaceProbesHeader={"ID","Fuel Type","Fuel Category","Full Tank","Fuel Quantity","Fuel Amount","Date","Mode of payment"};
+    String[] spaceProbesHeader={"ID","Type","Category","Full Tank","Quantity","Amount","Date","Payment Mode"};
     String [][] spaceProbes;
 
     @Override

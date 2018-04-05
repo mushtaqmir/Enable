@@ -16,13 +16,13 @@ import android.widget.Toast;
 
 public class OrderReview extends AppCompatActivity{
 
-    DataBaseHelper mydb;
+    DbHandler mydb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.order_review);
 
-        mydb = new DataBaseHelper(this);
+        mydb = new DbHandler(this,null,null,1);
 
         // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();
