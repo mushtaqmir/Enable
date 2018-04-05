@@ -26,7 +26,8 @@ public class startFuelDetails extends AppCompatActivity {
     public static final int BUTTON_PRESED_ENABLED = 1;
     public static String fuelType = "";
     public static int buttonPressed = BUTTON_PRESED_DISABLED;
-
+    String txtWindshield ="No";
+    String txtFreeOil ="No";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +54,20 @@ public class startFuelDetails extends AppCompatActivity {
         final RadioButton fuelTypeDiesel = (RadioButton) findViewById(R.id.fuelTypeDiesel);
         final TextView textView = findViewById(R.id.fuelTypeView);
         final RadioGroup fuelCategoryRadioGroup = (RadioGroup) findViewById(R.id.fuelCategoryRadioGroup);
+
+        final TextView WindshieldCleanTxt = findViewById(R.id.WindshieldCleanTxt);
+        final RadioGroup WindshieldClean = (RadioGroup) findViewById(R.id.WindshieldClean);
+        final RadioButton WindshieldCleanYes = (RadioButton) findViewById(R.id.WindshieldCleanYes);
+        final RadioButton WindshieldCleanNo = (RadioButton) findViewById(R.id.WindshieldCleanNo);
+
+
+        final TextView FreeOilChangeTxt = findViewById(R.id.FreeOilChangeTxt);
+        final RadioGroup FreeOilChange = (RadioGroup) findViewById(R.id.FreeOilChange);
+        final RadioButton FreeOilChangeYes = (RadioButton) findViewById(R.id.FreeOilChangeYes);
+        final RadioButton FreeOilChangeNo = (RadioButton) findViewById(R.id.FreeOilChangeNo);
+
+
+
         fuelTypeRadioGroup.setVisibility(View.VISIBLE);
         fuelCategoryRadioGroup.setVisibility(View.INVISIBLE);
         textView.setVisibility(View.INVISIBLE);
@@ -61,6 +76,10 @@ public class startFuelDetails extends AppCompatActivity {
         editQty.setVisibility(View.INVISIBLE);
         orderDetails.setFuelAmount(DOUBLE_ZERO);
         submitButton.setVisibility(View.INVISIBLE);
+        WindshieldCleanTxt.setVisibility(View.INVISIBLE);
+        WindshieldClean.setVisibility(View.INVISIBLE);
+        FreeOilChangeTxt.setVisibility(View.INVISIBLE);
+        FreeOilChange.setVisibility(View.INVISIBLE);
 
 
         fuelTypeRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -80,6 +99,11 @@ public class startFuelDetails extends AppCompatActivity {
                     enterQty.setVisibility(View.INVISIBLE);
                     editQty.setVisibility(View.INVISIBLE);
                     submitButton.setVisibility(View.INVISIBLE);
+                    WindshieldCleanTxt.setVisibility(View.INVISIBLE);
+                    WindshieldClean.setVisibility(View.INVISIBLE);
+                    FreeOilChangeTxt.setVisibility(View.INVISIBLE);
+                    FreeOilChange.setVisibility(View.INVISIBLE);
+
                 }
                 else if(fuelTypeDiesel.isChecked()){
                     fuelType = fuelTypeDiesel.getText().toString(); //Diesel
@@ -94,6 +118,11 @@ public class startFuelDetails extends AppCompatActivity {
                     enterQty.setVisibility(View.INVISIBLE);
                     editQty.setVisibility(View.INVISIBLE);
                     submitButton.setVisibility(View.INVISIBLE);
+                    WindshieldCleanTxt.setVisibility(View.INVISIBLE);
+                    WindshieldClean.setVisibility(View.INVISIBLE);
+                    FreeOilChangeTxt.setVisibility(View.INVISIBLE);
+                    FreeOilChange.setVisibility(View.INVISIBLE);
+
 
                 }
             }
@@ -104,10 +133,15 @@ public class startFuelDetails extends AppCompatActivity {
                 @Override
                 public void onCheckedChanged(RadioGroup group, int checkedId) {
                     fuelQuantityRadioGroup.setVisibility(View.VISIBLE);
+                    FreeOilChange.setVisibility(View.VISIBLE);
+                    FreeOilChangeTxt.setVisibility(View.VISIBLE);
+                    WindshieldCleanTxt.setVisibility(View.VISIBLE);
+                    WindshieldClean.setVisibility(View.VISIBLE);
                     enterQty.setVisibility(View.INVISIBLE);
                     editQty.setVisibility(View.INVISIBLE);
                     submitButton.setVisibility(View.INVISIBLE);
                     fuelQuantityRadioGroup.clearCheck();
+
                     if (fuelCategoryVPower.isChecked()) {
                         orderDetails.setCategory(fuelCategoryVPower.getText().toString());
                     } else if (fuelCategoryUnleaded.isChecked()) {
@@ -140,9 +174,6 @@ public class startFuelDetails extends AppCompatActivity {
                     orderDetails.setFullTank(false);
                     orderDetails.setFuelQty(DOUBLE_ZERO);
                     orderDetails.setFuelQtyAmtIndentifier(1);
-
-
-
                     }
                     else if(quantityRadioBtn.isChecked()){
                     submitButton.setVisibility(View.VISIBLE);
@@ -155,10 +186,39 @@ public class startFuelDetails extends AppCompatActivity {
                     orderDetails.setFuelQtyAmtIndentifier(2);
 
                     }
-
-
-                }
+                 }
             });
+
+        WindshieldClean.setOnCheckedChangeListener(
+                new RadioGroup.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                        if(WindshieldCleanYes.isChecked()){
+                            txtWindshield = "Yes";
+                        }
+                        else{
+                            txtWindshield = "No";
+                        }
+
+
+                    }
+                });
+        FreeOilChange.setOnCheckedChangeListener(
+                new RadioGroup.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                        if(FreeOilChangeYes.isChecked()){
+                            txtFreeOil="Yes";
+                        }
+                        else{
+                            txtFreeOil="No";
+                        }
+
+
+                    }
+                });
             //Button OnCLickLISTNER
             submitButton.setOnClickListener(
                     new View.OnClickListener(){
@@ -182,13 +242,15 @@ public class startFuelDetails extends AppCompatActivity {
                                     return;
                                 }
                             }
-
-                            /*Intent launchOrderReview= new Intent(startFuelDetails.this,OrderReview.class);
-                            launchOrderReview.putExtra(ORDER_DET_CONSTANT,orderDetails);
-                            startActivity(launchOrderReview);*/
+                            Toast.makeText(getApplicationContext(), " free Oil"+txtFreeOil,
+                                    Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), " Wind Shield Oil"+txtWindshield,
+                                    Toast.LENGTH_SHORT).show();
 
                             Intent launchModeOfPayment= new Intent(startFuelDetails.this,paymentMode.class);
                             launchModeOfPayment.putExtra(ORDER_DET_CONSTANT,orderDetails);
+                            launchModeOfPayment.putExtra("txtFreeOil",txtFreeOil);
+                            launchModeOfPayment.putExtra("txtWindshield",txtWindshield);
                             startActivity(launchModeOfPayment);
 
                         }

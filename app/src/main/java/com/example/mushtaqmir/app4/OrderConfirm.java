@@ -20,7 +20,8 @@ import java.util.List;
 
 public class OrderConfirm extends AppCompatActivity  {
     DbHandler mydb;
-
+    String txtWindshield = "";
+    String txtFreeOil = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +33,8 @@ public class OrderConfirm extends AppCompatActivity  {
         Intent intent = getIntent();
         if (intent != null) {
             final OrderDetails orderDetails = (OrderDetails) intent.getSerializableExtra("Order Details Class");
-
+            txtWindshield =  intent.getStringExtra("txtFreeOil");
+            txtFreeOil =  intent.getStringExtra("txtWindshield");
 
             final TextView fuelType = (TextView) findViewById(R.id.FuelType);
             final TextView fuelCategory = (TextView) findViewById(R.id.fuelCategory);
@@ -40,6 +42,8 @@ public class OrderConfirm extends AppCompatActivity  {
             final TextView fuelTxt = (TextView) findViewById(R.id.FuelTxt);
             final Button StartNew = (Button) findViewById(R.id.StartNew);
             final TextView paymentMode = (TextView) findViewById(R.id.paymentMode);
+            final TextView WindshieldCleanReview = (TextView) findViewById(R.id.WindshieldCleanReview);
+            final TextView freeOilRev = (TextView) findViewById(R.id.freeOilRev);
 
             final Button showOrderHistory = (Button) findViewById(R.id.showOrderHistory);
 
@@ -47,6 +51,8 @@ public class OrderConfirm extends AppCompatActivity  {
                 fuelType.setText(orderDetails.getFuelType());
                 fuelCategory.setText(orderDetails.getCategory());
                 paymentMode.setText(orderDetails.getModeOfPayment());
+                WindshieldCleanReview.setText(txtWindshield);
+                freeOilRev.setText(txtFreeOil);
                 if (orderDetails.getFuelQtyAmtIndentifier() == 0) {
                     fuelTxt.setVisibility(View.INVISIBLE);
                     fuel.setText("Please fill FULL TANK");
@@ -60,14 +66,6 @@ public class OrderConfirm extends AppCompatActivity  {
                         fuel.setText("" + orderDetails.getFuelQty() + " " + "Ltr");
                     }
                 }
-
-                String toPrint = "Order Confirm " + " " + "Fuel Type :-" + orderDetails.getFuelType() + " " +
-                        "Fuel Category :-" + " " + orderDetails.getCategory() + " " +
-                        "Fuel Quantity :-" + " " + orderDetails.getFuelQty() + " " +
-                        "Fuel Amount :-" + orderDetails.getFuelAmount() + " " +
-                        "Fuel Full tank option :-" + orderDetails.isFullTank();
-                Toast.makeText(getApplicationContext(), toPrint,
-                        Toast.LENGTH_LONG).show();
 
                 //Button OnCLickLISTNER
                 StartNew.setOnClickListener(

@@ -15,7 +15,8 @@ import android.widget.Toast;
 
 
 public class OrderReview extends AppCompatActivity{
-
+    String txtWindshield ="";
+    String txtFreeOil ="";
     DbHandler mydb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,8 @@ public class OrderReview extends AppCompatActivity{
         if(intent != null) {
            final OrderDetails orderDetails = (OrderDetails) intent.getSerializableExtra("Order with payment");
 
+            txtWindshield =  intent.getStringExtra("txtFreeOil");
+            txtFreeOil =  intent.getStringExtra("txtWindshield");
 
             final TextView fuelType = (TextView) findViewById(R.id.FuelType);
             final TextView fuelCategory = (TextView) findViewById(R.id.fuelCategory);
@@ -38,11 +41,16 @@ public class OrderReview extends AppCompatActivity{
             final Button editBtn = (Button) findViewById(R.id.editBtn);
             final TextView paymentMode = (TextView) findViewById(R.id.paymentMode);
 
+            final TextView WindshieldCleanReview = (TextView) findViewById(R.id.WindshieldCleanReview);
+            final TextView freeOilRev = (TextView) findViewById(R.id.freeOilRev);
+
 
             if(orderDetails!=null) {
                 fuelType.setText(orderDetails.getFuelType());
                 fuelCategory.setText(orderDetails.getCategory());
                 paymentMode.setText(orderDetails.getModeOfPayment());
+                WindshieldCleanReview.setText(txtWindshield);
+                freeOilRev.setText(txtFreeOil);
                 if(orderDetails.getFuelQtyAmtIndentifier() == 0){
                     fuelTxt.setVisibility(View.INVISIBLE);
                     fuel.setText("Please fill FULL TANK");
@@ -67,7 +75,8 @@ public class OrderReview extends AppCompatActivity{
                                 if(isInserted) {
                                     Intent launchOrderReview = new Intent(OrderReview.this, OrderConfirm.class);
                                     launchOrderReview.putExtra("Order Details Class", orderDetails);
-                                    launchOrderReview.putExtra("Edit Type", 0);
+                                    launchOrderReview.putExtra("txtFreeOil",txtFreeOil);
+                                    launchOrderReview.putExtra("txtWindshield",txtWindshield);
                                     startActivity(launchOrderReview);
                                 }
                                 else{
