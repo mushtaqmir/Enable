@@ -46,7 +46,7 @@
             android:id="@+id/FuelType"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="120dp"
+            android:layout_marginLeft="150dp"
             android:layout_marginTop="70dp"
             android:text="Fuel Type"
             app:layout_constraintBaseline_toBaselineOf="@+id/FueTypeTxt"/>
@@ -65,29 +65,11 @@
             android:id="@+id/fuelCategory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="120dp"
+            android:layout_marginLeft="150dp"
             android:layout_marginTop="120dp"
             android:text="Fuel Category"
             app:layout_constraintBaseline_toBaselineOf="@+id/fuelCategoryTxt"/>
 
-        <TextView
-            android:id="@+id/FuelTxt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="220dp"
-            android:text="Fuel Amount"
-            app:layout_constraintBaseline_toBaselineOf="@+id/FuelTxt"/>
-
-        <TextView
-            android:id="@+id/Fuel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="120dp"
-            android:layout_marginTop="220dp"
-            android:inputType="numberDecimal"
-            android:text="Fuel Amount"
-            app:layout_constraintBaseline_toBaselineOf="@+id/Fuel"/>
 
         <TextView
             android:id="@+id/paymentModeTxt"
@@ -103,19 +85,69 @@
             android:id="@+id/paymentMode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="120dp"
+            android:layout_marginLeft="150dp"
             android:layout_marginTop="170dp"
             android:inputType="numberDecimal"
             android:text="Payment Mode"
             app:layout_constraintBaseline_toBaselineOf="@+id/paymentModeTxt"/>
 
+        <TextView
+            android:id="@+id/WindshieldCleanRevTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="220dp"
+            android:text="Windshield Cleaning" />
+
+        <TextView
+            android:id="@+id/WindshieldCleanReview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="220dp"
+            android:text="Yes" />
+
+        <TextView
+            android:id="@+id/freeOilRevTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="270dp"
+            android:text="FREE Oil Change" />
+
+        <TextView
+            android:id="@+id/freeOilRev"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="270dp"
+            android:text="Yes" />
+
+        <TextView
+            android:id="@+id/FuelTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="320dp"
+            android:text="Fuel Amount"
+            app:layout_constraintBaseline_toBaselineOf="@+id/FuelTxt"/>
+
+        <TextView
+            android:id="@+id/Fuel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="320dp"
+            android:inputType="numberDecimal"
+            android:text="Fuel Amount"
+            app:layout_constraintBaseline_toBaselineOf="@+id/Fuel"/>
 
         <Button
             android:id="@+id/StartNew"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="140dp"
-            android:layout_marginTop="300dp"
+            android:layout_marginTop="400dp"
             android:layout_marginBottom="20dp"
             android:gravity="center"
             android:text="Start New Order"
@@ -124,7 +156,7 @@
             android:id="@+id/showOrderHistory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="200dp"
+
             android:layout_marginTop="400dp"
             android:layout_marginBottom="20dp"
             android:gravity="center"

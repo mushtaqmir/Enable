@@ -18,7 +18,8 @@ import android.widget.Toast;
 
 
 public class paymentMode extends AppCompatActivity {
-
+    String txtWindshield ="";
+    String txtFreeOil ="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,11 @@ public class paymentMode extends AppCompatActivity {
         Intent intent = getIntent();
         if(intent != null) {
             final OrderDetails orderDetails = (OrderDetails) intent.getSerializableExtra(startFuelDetails.ORDER_DET_CONSTANT);
+
+
+            txtWindshield =  intent.getStringExtra("txtFreeOil");
+            txtFreeOil =  intent.getStringExtra("txtWindshield");
+
 
 
             final RadioGroup modeOfPayRadioGrp = (RadioGroup) findViewById(R.id.modeOfPayRadioGrp);
@@ -62,11 +68,10 @@ public class paymentMode extends AppCompatActivity {
                         new View.OnClickListener(){
                             public void onClick(View v){
 
-                            /*Intent launchOrderReview= new Intent(startFuelDetails.this,OrderReview.class);
-                            launchOrderReview.putExtra(ORDER_DET_CONSTANT,orderDetails);
-                            startActivity(launchOrderReview);*/
 
                                 Intent launchOrderReview= new Intent(paymentMode.this,OrderReview.class);
+                                launchOrderReview.putExtra("txtFreeOil",txtFreeOil);
+                                launchOrderReview.putExtra("txtWindshield",txtWindshield);
                                 launchOrderReview.putExtra("Order with payment",orderDetails);
                                 startActivity(launchOrderReview);
 
