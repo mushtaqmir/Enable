@@ -3,8 +3,12 @@ package com.example.mushtaqmir.app4;
 import android.content.Intent;
 import android.app.Activity;
 import android.speech.tts.TextToSpeech;
+import android.support.v7.widget.Toolbar;
+import android.view.WindowManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -23,8 +27,13 @@ public class ActivityMain extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
+        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main2);
-
+        //adding toolbar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle("Enable");
+        toolbar.setSubtitle("Shell");
         templateBtn=(Button)findViewById(R.id.templateStartBtn);
         chatBtn=(Button)findViewById(R.id.chatBtn);
         speakerBtn=(ImageButton)findViewById(R.id.speakerBtn);
@@ -86,5 +95,25 @@ public class ActivityMain extends Activity {
        // Intent intent=new Intent(this,ChatBox.class);
         Intent intent=new Intent(this,ChatBox.class);
         startActivity(intent);
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.settings_menu, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        switch (item.getItemId())
+        {
+            case R.id.settings:
+                //your code here
+                Toast.makeText(ActivityMain.this,"settings working",Toast.LENGTH_LONG).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
