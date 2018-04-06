@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 import java.util.Locale;
 
-public class ActivityMain extends Activity {
+public class ActivityMain extends AppCompatActivity {
 
     private Button templateBtn;
     private Button chatBtn;
@@ -27,13 +27,8 @@ public class ActivityMain extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().addFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
-        getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main2);
-        //adding toolbar
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("Enable");
-        toolbar.setSubtitle("Shell");
+
         templateBtn=(Button)findViewById(R.id.templateStartBtn);
         chatBtn=(Button)findViewById(R.id.chatBtn);
         speakerBtn=(ImageButton)findViewById(R.id.speakerBtn);
@@ -108,7 +103,7 @@ public class ActivityMain extends Activity {
     {
         switch (item.getItemId())
         {
-            case R.id.settings:
+            case R.id.history:
                 //your code here
                 Toast.makeText(ActivityMain.this,"settings working",Toast.LENGTH_LONG).show();
                 return true;
