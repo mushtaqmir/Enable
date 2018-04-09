@@ -20,7 +20,7 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Locale;
 
-public class ActivityMain extends AppCompatActivity {
+public class ActivityMain extends ToolBarActivity {
 
     private Button templateBtn;
     private Button chatBtn;
@@ -104,37 +104,7 @@ public class ActivityMain extends AppCompatActivity {
         Intent intent=new Intent(this,ChatBox.class);
         startActivity(intent);
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
 
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.settings_menu, menu);
-        return true;
-    }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        switch (item.getItemId())
-        {
-            case R.id.history: {
-                List<OrderDetails> allOrders = mydb.getAllOrders();
-                if (allOrders.isEmpty()) {
-                    showMessage("Error", "Nothing stored");
-                } else {
-                    Intent launchOrderHistory = new Intent(ActivityMain.this, OrderHistory.class);
-                    Bundle args = new Bundle();
-                    args.putSerializable("ARRAYLIST", (Serializable) allOrders);
-                    launchOrderHistory.putExtra("BUNDLE", args);
-                    startActivity(launchOrderHistory);
-                }
-
-            }
-
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
 
     public void showMessage(String title,String message){
         AlertDialog.Builder builder = new  AlertDialog.Builder(this);

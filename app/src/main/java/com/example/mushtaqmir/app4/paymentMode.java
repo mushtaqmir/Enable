@@ -5,8 +5,9 @@ import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.InputType;
-import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.app.Activity;
 import android.widget.EditText;
@@ -15,9 +16,10 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+import android.view.Menu;
 
 
-public class paymentMode extends AppCompatActivity {
+public class paymentMode extends ToolBarActivity {
     String txtWindshield ="";
     String txtFreeOil ="";
     int buttonEnable = 0;

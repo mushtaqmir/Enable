@@ -9,7 +9,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-public class StartActivity extends AppCompatActivity {
+public class StartActivity extends ToolBarActivity {
 
     public static final String EXTRA_MESSAGE = "com.example.anshulkumar.shellapplication.MESSAGE";
     public static final int BUTTON_PRESED_DISABLED = 0;

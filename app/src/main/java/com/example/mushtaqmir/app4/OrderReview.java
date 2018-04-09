@@ -15,7 +15,7 @@ import android.widget.Toast;
 import java.io.IOException;
 
 
-public class OrderReview extends AppCompatActivity{
+public class OrderReview extends ToolBarActivity{
     String txtWindshield ="";
     String txtFreeOil ="";
     DbHandler mydb;

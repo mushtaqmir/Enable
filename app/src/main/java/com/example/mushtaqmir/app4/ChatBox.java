@@ -32,7 +32,7 @@ import java.util.List;
 import java.util.Arrays;
 import java.util.Locale;
 
-public class ChatBox extends AppCompatActivity {
+public class ChatBox extends ToolBarActivity {
     private ArrayAdapter customerAdapter;
     private List<Message> custMsgList;
     ListView custMsgListView;

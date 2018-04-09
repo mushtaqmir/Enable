@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.Arrays;
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends ToolBarActivity {
 
     TextToSpeech textToSpeech;
     String message;

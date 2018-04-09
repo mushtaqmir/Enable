@@ -19,7 +19,7 @@ import java.util.List;
  * Created by Anshul.Kumar on 3/27/2018.
  */
 
-public class OrderConfirm extends AppCompatActivity  {
+public class OrderConfirm extends ToolBarActivity  {
     
     String txtWindshield = "";
     String txtFreeOil = "";
