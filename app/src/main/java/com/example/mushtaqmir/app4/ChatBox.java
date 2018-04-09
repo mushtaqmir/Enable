@@ -8,6 +8,7 @@ import android.speech.RecognizerIntent;
 import android.speech.tts.TextToSpeech;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.view.ContextMenu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -31,7 +32,7 @@ import java.util.List;
 import java.util.Arrays;
 import java.util.Locale;
 
-public class ChatBox extends Activity {
+public class ChatBox extends AppCompatActivity {
     private ArrayAdapter customerAdapter;
     private List<Message> custMsgList;
     ListView custMsgListView;

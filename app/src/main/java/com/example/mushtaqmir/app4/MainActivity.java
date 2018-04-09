@@ -5,6 +5,7 @@ package com.example.mushtaqmir.app4;
 import android.app.Activity;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
+import android.support.v7.app.AppCompatActivity;
 import android.view.ContextMenu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -16,13 +17,15 @@ import android.widget.ListView;
 import android.speech.tts.TextToSpeech;
 import android.widget.EditText;
 import android.widget.Button;
+
+import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
 import java.util.Locale;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     TextToSpeech textToSpeech;
     String message;
@@ -36,7 +39,12 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        dbHandler=new DbHandler(this,null,null,1);
+        try{
+            dbHandler=new DbHandler(this,Util.getProperty("DATABASE_NAME",this),null,1);
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
         String[] messageList={"Hi, how are you.","How can i help you.","Welcome"};
         msgList=new ArrayList<String>(Arrays.asList(messageList));
 
