@@ -20,6 +20,7 @@ import android.widget.Toast;
 public class paymentMode extends AppCompatActivity {
     String txtWindshield ="";
     String txtFreeOil ="";
+    int buttonEnable = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,13 +33,8 @@ public class paymentMode extends AppCompatActivity {
         Intent intent = getIntent();
         if(intent != null) {
             final OrderDetails orderDetails = (OrderDetails) intent.getSerializableExtra(startFuelDetails.ORDER_DET_CONSTANT);
-
-
             txtWindshield =  intent.getStringExtra("txtFreeOil");
             txtFreeOil =  intent.getStringExtra("txtWindshield");
-
-
-
             final RadioGroup modeOfPayRadioGrp = (RadioGroup) findViewById(R.id.modeOfPayRadioGrp);
             final RadioButton payByShellCashCard = (RadioButton) findViewById(R.id.payByShellCashCard);
             final RadioButton payByCash = (RadioButton) findViewById(R.id.payByCash);
@@ -53,12 +49,15 @@ public class paymentMode extends AppCompatActivity {
 
                         if(payByShellCashCard.isChecked()){
                             orderDetails.setModeOfPayment(payByShellCashCard.getText().toString());
+                            buttonEnable=1;
                         }
                         else if(payByCash.isChecked()){
                             orderDetails.setModeOfPayment(payByCash.getText().toString());
+                            buttonEnable=1;
                         }
                         else if(payByCard.isChecked()){
                             orderDetails.setModeOfPayment(payByCard.getText().toString());
+                            buttonEnable=1;
                         }
                     }
                 });
@@ -67,14 +66,18 @@ public class paymentMode extends AppCompatActivity {
                 confirmPayBtn.setOnClickListener(
                         new View.OnClickListener(){
                             public void onClick(View v){
+                                if(buttonEnable ==1) {
 
-
-                                Intent launchOrderReview= new Intent(paymentMode.this,OrderReview.class);
-                                launchOrderReview.putExtra("txtFreeOil",txtFreeOil);
-                                launchOrderReview.putExtra("txtWindshield",txtWindshield);
-                                launchOrderReview.putExtra("Order with payment",orderDetails);
-                                startActivity(launchOrderReview);
-
+                                    Intent launchOrderReview = new Intent(paymentMode.this, OrderReview.class);
+                                    launchOrderReview.putExtra("txtFreeOil", txtFreeOil);
+                                    launchOrderReview.putExtra("txtWindshield", txtWindshield);
+                                    launchOrderReview.putExtra("Order with payment", orderDetails);
+                                    startActivity(launchOrderReview);
+                                }
+                                else{
+                                    Toast.makeText(getApplicationContext(),"Please enter Payment Type",
+                                            Toast.LENGTH_SHORT).show();
+                                }
                             }
                         } );
 

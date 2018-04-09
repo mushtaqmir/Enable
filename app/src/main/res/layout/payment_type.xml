@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#ffc400">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -23,10 +24,11 @@
             android:id="@+id/ModeOfPaymentTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="150dp"
             android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
             android:gravity="center"
             android:text="Mode Of Payment"
+            style="@style/FontStyleHdr"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -45,22 +47,26 @@
 
             <RadioButton
                 android:id="@+id/payByShellCashCard"
-                android:layout_width="200dp"
+                android:layout_width="220dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="15dp"
                 android:width="350dp"
                 android:checked="false"
+                style="@style/FontStylefotter"
+                android:theme="@style/MyRaidoButtonTwo"
                 android:text="Pay by Shell Cash Card"
                 tools:layout_editor_absoluteX="34dp"
                 tools:layout_editor_absoluteY="145dp" />
 
             <RadioButton
                 android:id="@+id/payByCash"
-                android:layout_width="200dp"
+                android:layout_width="220dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="15dp"
                 android:width="320dp"
                 android:checked="false"
+                style="@style/FontStylefotter"
+                android:theme="@style/MyRaidoButtonTwo"
                 android:duplicateParentState="false"
                 android:text="Pay by Cash"
                 tools:layout_editor_absoluteX="265dp"
@@ -68,11 +74,13 @@
 
             <RadioButton
                 android:id="@+id/payByCard"
-                android:layout_width="200dp"
+                android:layout_width="220dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="15dp"
                 android:width="320dp"
                 android:checked="false"
+                style="@style/FontStylefotter"
+                android:theme="@style/MyRaidoButtonTwo"
                 android:duplicateParentState="false"
                 android:text="Pay by Debit/Credit Card"
                 tools:layout_editor_absoluteX="265dp"
@@ -84,6 +92,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:theme="@style/ButtonAction"
+            android:background="#ffffff"
             android:layout_marginLeft="140dp"
             android:layout_marginTop="250dp"
             android:text="CONFIRM"

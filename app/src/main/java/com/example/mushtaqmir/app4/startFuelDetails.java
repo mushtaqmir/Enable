@@ -242,10 +242,6 @@ public class startFuelDetails extends AppCompatActivity {
                                     return;
                                 }
                             }
-                            Toast.makeText(getApplicationContext(), " free Oil"+txtFreeOil,
-                                    Toast.LENGTH_SHORT).show();
-                            Toast.makeText(getApplicationContext(), " Wind Shield Oil"+txtWindshield,
-                                    Toast.LENGTH_SHORT).show();
 
                             Intent launchModeOfPayment= new Intent(startFuelDetails.this,paymentMode.class);
                             launchModeOfPayment.putExtra(ORDER_DET_CONSTANT,orderDetails);

@@ -60,7 +60,8 @@
                 android:value=".StartActivity" />
         </activity>
         <activity   android:name=".paymentMode"
-            android:parentActivityName=".StartActivity">
+                    android:noHistory="true"
+                    android:parentActivityName=".StartActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".StartActivity" />

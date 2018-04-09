@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#ffc400">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -31,6 +32,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:gravity="center_horizontal"
+                style="@style/FontStyleHdrLand"
                 android:text="@string/indicateStr"
                 app:layout_constraintBottom_toTopOf="@+id/fuelTypeRadioGroup"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -60,6 +62,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="57dp"
                     android:width="320dp"
+                    style="@style/FontStylefotterLand"
                     android:checked="false"
                     android:text="@string/fuelTypePetrolStr"
                     tools:layout_editor_absoluteX="34dp"
@@ -70,6 +73,7 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="70dp"
+                    style="@style/FontStylefotterLand"
                     android:width="320dp"
                     android:checked="false"
                     android:text="@string/fuelTypeDieselStr"
@@ -85,6 +89,7 @@
                 android:layout_marginTop="70dp"
                 android:gravity="center_horizontal"
                 android:text="@string/petrolDetailStr"
+                style="@style/FontStyleHdrLand"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/fuelTypeRadioGroup"
@@ -98,6 +103,7 @@
                 android:layout_marginEnd="10dp"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="5dp"
+
                 android:gravity="center_horizontal"
                 android:orientation="horizontal"
                 android:padding="10dp"
@@ -110,10 +116,11 @@
 
                 <RadioButton
                     android:id="@+id/fuelCategoryVPower"
-                    android:layout_width="175dp"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
+                    style="@style/FontStylefotterLand"
                     android:width="320dp"
                     android:checked="false"
                     android:text="@string/fuelVpowerStr"
@@ -122,11 +129,12 @@
 
                 <RadioButton
                     android:id="@+id/fuelCategoryUnleaded"
-                    android:layout_width="175dp"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="0dp"
                     android:width="320dp"
                     android:checked="false"
+                    style="@style/FontStylefotterLand"
                     android:duplicateParentState="false"
                     android:text="@string/fuelUnleadedStr"
                     tools:layout_editor_absoluteX="265dp"
@@ -138,7 +146,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="10dp"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:gravity="center_horizontal"
                 android:orientation="horizontal"
@@ -150,12 +158,13 @@
 
                 <RadioButton
                     android:id="@+id/fullTankRadioBtn"
-                    android:layout_width="100dp"
+                    android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="10dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="10dp"
                     android:text="@string/fullTankStr"
+                    style="@style/FontStylefotterLand"
                     app:layout_constraintBaseline_toBaselineOf="@+id/radioButton4"
                     app:layout_constraintLeft_toLeftOf="parent"
                     tools:layout_editor_absoluteX="34dp"
@@ -163,33 +172,36 @@
 
                 <RadioButton
                     android:id="@+id/amountRadioBtn"
-                    android:layout_width="100dp"
+                    android:layout_width="110dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginLeft="57dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginLeft="40dp"
                     android:layout_marginRight="10dp"
                     android:text="@string/amountStr"
+                    style="@style/FontStylefotterLand"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/radioButton2" />
 
                 <RadioButton
                     android:id="@+id/quantityRadioBtn"
-                    android:layout_width="100dp"
+                    android:layout_width="115dp"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="20dp"
                     android:text="@string/quantityStr"
+                    style="@style/FontStylefotterLand"
                     app:layout_constraintBaseline_toBaselineOf="@+id/radioButton4"
                     app:layout_constraintRight_toRightOf="parent" />
             </RadioGroup>
 
             <TextView
                 android:id="@+id/enterQty"
-                android:layout_width="70dp"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="200dp"
                 android:layout_marginTop="24dp"
                 android:gravity="center_horizontal"
+                style="@style/FontStylefotterLand"
                 android:text="@string/enterQty"
                 app:layout_constraintBaseline_toBaselineOf="@+id/editQty"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -197,6 +209,7 @@
 
             <EditText
                 android:id="@+id/editQty"
+                style="@style/FontStylefotterLand"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
@@ -205,18 +218,19 @@
                 android:gravity="center_horizontal"
                 android:inputType="numberDecimal"
                 app:layout_constraintBottom_toTopOf="@+id/WindshieldCleanTxt"
-                app:layout_constraintHorizontal_bias="0.553"
+                app:layout_constraintHorizontal_bias="0.662"
                 app:layout_constraintLeft_toLeftOf="parent"
 
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/fuelQuantityRadioGroup"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/WindshieldCleanTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                style="@style/FontStyleHdrLand"
                 android:gravity="center_horizontal"
                 android:text="Windshield Cleaning"
                 app:layout_constraintBottom_toTopOf="@+id/FreeOilChangeTxt"
@@ -248,6 +262,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="60dp"
                     android:width="320dp"
+                    style="@style/FontStylefotterLand"
                     android:checked="false"
                     android:text="Yes"
                     tools:layout_editor_absoluteX="34dp"
@@ -263,6 +278,7 @@
                     android:checked="false"
                     android:duplicateParentState="false"
                     android:text="No"
+                    style="@style/FontStylefotterLand"
                     tools:layout_editor_absoluteX="265dp"
                     tools:layout_editor_absoluteY="163dp" />
             </RadioGroup>
@@ -274,6 +290,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginBottom="30dp"
                 android:layout_marginTop="20dp"
+                style="@style/FontStyleHdrLand"
                 android:gravity="center_horizontal"
                 android:text="FreeOilChange"
                 app:layout_constraintBottom_toTopOf="@+id/submitButton"
@@ -305,6 +322,7 @@
                     android:layout_marginRight="60dp"
                     android:layout_gravity="center"
                     android:width="320dp"
+                    style="@style/FontStylefotterLand"
                     android:checked="false"
                     android:text="Yes"
                     tools:layout_editor_absoluteX="34dp"
@@ -317,6 +335,7 @@
                     android:layout_marginLeft="70dp"
                     android:layout_gravity="center"
                     android:width="320dp"
+                    style="@style/FontStylefotterLand"
                     android:checked="false"
                     android:duplicateParentState="false"
                     android:text="No"
@@ -332,11 +351,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="5dp"
-                android:gravity="center_horizontal"
+                android:gravity="center"
                 android:text="@string/submitButton"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/FreeOilChange"
+                android:theme="@style/ButtonAction"
+                android:background="#ffffff"
                 />
 
 

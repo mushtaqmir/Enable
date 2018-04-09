@@ -7,9 +7,13 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
+import de.codecrafters.tableview.SortableTableView;
 import de.codecrafters.tableview.TableView;
+import de.codecrafters.tableview.model.TableColumnDpWidthModel;
 import de.codecrafters.tableview.toolkit.SimpleTableDataAdapter;
 import de.codecrafters.tableview.toolkit.SimpleTableHeaderAdapter;
 
@@ -21,15 +25,28 @@ public class OrderHistory extends AppCompatActivity {
 
     String[] spaceProbesHeader={"ID","Type","Category","Full Tank","Quantity","Amount","Date","Payment Mode"};
     String [][] spaceProbes;
+    ShortById sbID = new ShortById();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.order_history);
 
-        final TableView<String[]> tb = (TableView<String[]>) findViewById(R.id.tableHistoryView);
+        final SortableTableView<String[]> tb = (SortableTableView<String[]>) findViewById(R.id.tableHistoryView);
         tb.setColumnCount(8);
-        tb.setHeaderBackgroundColor(Color.parseColor("#2ecc71"));
+        tb.setHeaderBackgroundColor(Color.parseColor("#ffc400"));
+
+       /* TableColumnDpWidthModel columnModel = new TableColumnDpWidthModel(getApplicationContext(), 8);
+        columnModel.setColumnWidth(0, 20);
+        columnModel.setColumnWidth(1, 40);
+        columnModel.setColumnWidth(2, 70);
+        columnModel.setColumnWidth(3, 30);
+        columnModel.setColumnWidth(4, 40);
+        columnModel.setColumnWidth(5, 40);
+        columnModel.setColumnWidth(6, 100);
+        columnModel.setColumnWidth(7, 80);
+
+        tb.setColumnModel(columnModel);*/
 
         Intent intent = getIntent();
         Bundle args = intent.getBundleExtra("BUNDLE");
@@ -40,6 +57,9 @@ public class OrderHistory extends AppCompatActivity {
 
         tb.setHeaderAdapter(new SimpleTableHeaderAdapter(this,spaceProbesHeader));
         tb.setDataAdapter(new SimpleTableDataAdapter(this,spaceProbes));
+
+        tb.setColumnComparator(0, sbID);
+
     }
 
     public void orderDetailsHis(ArrayList<OrderDetails> orderDetailsList) {
@@ -61,5 +81,4 @@ public class OrderHistory extends AppCompatActivity {
             }
         }
     }
-
 }
