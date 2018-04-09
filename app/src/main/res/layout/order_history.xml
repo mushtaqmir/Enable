@@ -11,8 +11,6 @@
                 <de.codecrafters.tableview.SortableTableView
                     android:id="@+id/tableHistoryView"
                     android:layout_width="1000dp"
-android:orientation="horizontal"
-                    
                     android:layout_height="wrap_content"
                     android:nestedScrollingEnabled="true"
                     >

@@ -165,19 +165,6 @@
             android:background="#ffffff"
             android:text="Start New Order"
             app:layout_constraintTop_toBottomOf="@+id/paymentMode"/>
-        <Button
-            android:id="@+id/showOrderHistory"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:layout_marginTop="400dp"
-            android:layout_marginBottom="20dp"
-            android:gravity="center"
-            android:text="Order history"
-            android:theme="@style/ButtonAction"
-            android:background="#ffffff"
-            app:layout_constraintTop_toBottomOf="@+id/paymentMode"/>
-
-    </FrameLayout>
+       </FrameLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>

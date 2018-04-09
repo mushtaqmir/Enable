@@ -3,6 +3,7 @@ package com.example.mushtaqmir.app4;
 import android.content.Intent;
 import android.app.Activity;
 import android.speech.tts.TextToSpeech;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.view.WindowManager;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,9 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import java.io.IOException;
+import java.io.Serializable;
+import java.util.List;
 import java.util.Locale;
 
 public class ActivityMain extends AppCompatActivity {
@@ -24,10 +28,19 @@ public class ActivityMain extends AppCompatActivity {
     private  TextToSpeech textToSpeech;
     private Button startBtn;
     private String message;
+    DbHandler mydb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        //Added for Order history
+        try{
+            mydb = new DbHandler(this,Util.getProperty("DATABASE_NAME",this),null,1);
+        }
+        catch (IOException e){
+            e.printStackTrace();
+        }
+
 
         templateBtn=(Button)findViewById(R.id.templateStartBtn);
         chatBtn=(Button)findViewById(R.id.chatBtn);
@@ -103,12 +116,31 @@ public class ActivityMain extends AppCompatActivity {
     {
         switch (item.getItemId())
         {
-            case R.id.history:
-                //your code here
-                Toast.makeText(ActivityMain.this,"settings working",Toast.LENGTH_LONG).show();
+            case R.id.history: {
+                List<OrderDetails> allOrders = mydb.getAllOrders();
+                if (allOrders.isEmpty()) {
+                    showMessage("Error", "Nothing stored");
+                } else {
+                    Intent launchOrderHistory = new Intent(ActivityMain.this, OrderHistory.class);
+                    Bundle args = new Bundle();
+                    args.putSerializable("ARRAYLIST", (Serializable) allOrders);
+                    launchOrderHistory.putExtra("BUNDLE", args);
+                    startActivity(launchOrderHistory);
+                }
+
+            }
+
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void showMessage(String title,String message){
+        AlertDialog.Builder builder = new  AlertDialog.Builder(this);
+        builder.setCancelable(true);
+        builder.setTitle(title);
+        builder.setMessage(message);
+        builder.show();
     }
 }
