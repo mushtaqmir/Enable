@@ -15,11 +15,10 @@ import android.widget.Toast;
 import java.io.IOException;
 
 
-public class OrderReview extends AppCompatActivity{
+public class OrderReview extends ToolBarActivity{
     String txtWindshield ="";
     String txtFreeOil ="";
     DbHandler mydb;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -110,11 +109,6 @@ public class OrderReview extends AppCompatActivity{
         super.onBackPressed();
 
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getSupportActionBar().setHomeButtonEnabled(false);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        getSupportActionBar().setDisplayShowHomeEnabled(false);
-        return true;
-    }
+
+
 }

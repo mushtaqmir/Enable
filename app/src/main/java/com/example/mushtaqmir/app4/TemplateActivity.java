@@ -2,30 +2,25 @@ package com.example.mushtaqmir.app4;
 
 
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
-import android.support.v7.app.AppCompatActivity;
 import android.view.ContextMenu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.speech.tts.TextToSpeech;
 import android.widget.EditText;
 import android.widget.Button;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
+public class TemplateActivity extends ToolBarActivity {
 
     TextToSpeech textToSpeech;
     String message;
@@ -79,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
                        message=String.valueOf(parent.getItemAtPosition(position));
                       //insert code here
-                        textToSpeech=new TextToSpeech(MainActivity.this, new TextToSpeech.OnInitListener() {
+                        textToSpeech=new TextToSpeech(TemplateActivity.this, new TextToSpeech.OnInitListener() {
                             @Override
                             public void onInit(int status) {
                                 if(status == TextToSpeech.SUCCESS){

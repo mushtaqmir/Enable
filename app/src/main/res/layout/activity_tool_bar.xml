@@ -4,11 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.mushtaqmir.app4.TemplateActivity">
-
-
-
-    <include layout="@layout/content_main" />
-
+    tools:context="com.example.mushtaqmir.app4.ToolBarActivity">
 
 </android.support.constraint.ConstraintLayout>

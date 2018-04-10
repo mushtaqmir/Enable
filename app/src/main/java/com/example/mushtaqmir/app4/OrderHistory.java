@@ -21,7 +21,7 @@ import de.codecrafters.tableview.toolkit.SimpleTableHeaderAdapter;
  * Created by Anshul.Kumar on 4/3/2018.
  */
 
-public class OrderHistory extends AppCompatActivity {
+public class OrderHistory extends ToolBarActivity {
 
     String[] spaceProbesHeader={"ID","Type","Category","Full Tank","Quantity","Amount","Date","Payment Mode"};
     String [][] spaceProbes;

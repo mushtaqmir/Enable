@@ -12,9 +12,10 @@ import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 
-public class startFuelDetails extends AppCompatActivity {
+public class startFuelDetails extends ToolBarActivity {
 
     public static final String ORDER_DET_CONSTANT = "com.example.anshulkumar.shellapplication.ORDER_DET_CONSTANT";
     public static final String FUEL_TYPE_PETROL = "Petrol";
@@ -267,11 +268,4 @@ public class startFuelDetails extends AppCompatActivity {
            return value;
    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getSupportActionBar().setHomeButtonEnabled(false);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        getSupportActionBar().setDisplayShowHomeEnabled(false);
-        return true;
-    }
 }
