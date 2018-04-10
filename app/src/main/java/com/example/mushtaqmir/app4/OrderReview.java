@@ -109,12 +109,6 @@ public class OrderReview extends ToolBarActivity{
         super.onBackPressed();
 
     }
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getSupportActionBar().setHomeButtonEnabled(false);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        getSupportActionBar().setDisplayShowHomeEnabled(false);
-        return true;
-    }
+
 
 }
