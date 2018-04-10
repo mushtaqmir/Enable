@@ -35,18 +35,11 @@ public class OrderHistory extends AppCompatActivity {
         final SortableTableView<String[]> tb = (SortableTableView<String[]>) findViewById(R.id.tableHistoryView);
         tb.setColumnCount(8);
         tb.setHeaderBackgroundColor(Color.parseColor("#ffc400"));
-
-       /* TableColumnDpWidthModel columnModel = new TableColumnDpWidthModel(getApplicationContext(), 8);
-        columnModel.setColumnWidth(0, 20);
-        columnModel.setColumnWidth(1, 40);
-        columnModel.setColumnWidth(2, 70);
-        columnModel.setColumnWidth(3, 30);
-        columnModel.setColumnWidth(4, 40);
-        columnModel.setColumnWidth(5, 40);
-        columnModel.setColumnWidth(6, 100);
-        columnModel.setColumnWidth(7, 80);
-
-        tb.setColumnModel(columnModel);*/
+        tb.setColumnWeight(2,2);
+        tb.setColumnWeight(3,1);
+        tb.setColumnWeight(4,1);
+        tb.setColumnWeight(6,2);
+        tb.setColumnWeight(7,2);
 
         Intent intent = getIntent();
         Bundle args = intent.getBundleExtra("BUNDLE");

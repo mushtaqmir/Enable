@@ -119,7 +119,7 @@ public class ActivityMain extends AppCompatActivity {
             case R.id.history: {
                 List<OrderDetails> allOrders = mydb.getAllOrders();
                 if (allOrders.isEmpty()) {
-                    showMessage("Error", "Nothing stored");
+                    showMessage("!!Alert!!", "Nothing stored");
                 } else {
                     Intent launchOrderHistory = new Intent(ActivityMain.this, OrderHistory.class);
                     Bundle args = new Bundle();

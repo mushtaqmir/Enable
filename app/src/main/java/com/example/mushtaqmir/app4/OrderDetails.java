@@ -14,7 +14,7 @@ public class OrderDetails implements Serializable{
     boolean fullTank;
     int fuelQtyAmtIndentifier;
     String ModeOfPayment;
-    Date orderDateTime;
+    String orderDateTime;
 
 
 
@@ -72,11 +72,12 @@ public class OrderDetails implements Serializable{
     public void setModeOfPayment(String modeOfPayment) {
         this.ModeOfPayment = modeOfPayment;
     }
-    public Date getOrderDateTime() {
+
+    public String getOrderDateTime() {
         return orderDateTime;
     }
 
-    public void setOrderDateTime(Date orderDateTime) {
+    public void setOrderDateTime(String orderDateTime) {
         this.orderDateTime = orderDateTime;
     }
 

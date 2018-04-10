@@ -19,6 +19,7 @@ public class OrderReview extends AppCompatActivity{
     String txtWindshield ="";
     String txtFreeOil ="";
     DbHandler mydb;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -116,5 +117,4 @@ public class OrderReview extends AppCompatActivity{
         getSupportActionBar().setDisplayShowHomeEnabled(false);
         return true;
     }
-
 }

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.text.DateFormat;
@@ -105,13 +106,35 @@ public class DbHandler extends SQLiteOpenHelper {
     //Changes for order history------------------------
     public boolean insertOrder(OrderDetails orderDetails){
         ContentValues contentValue=new ContentValues();
+
+        //Changes for concatination of some long string values
+        // Changes for category
+        String categoryToBeChanged = orderDetails.getCategory();
+        String changedCategoryString = "";
+        categoryToBeChanged = categoryToBeChanged.trim();// If in case user has given space initially
+        String[] splitCategory = categoryToBeChanged.split(" ");
+        for(int i=1;i<splitCategory.length;i++){
+            changedCategoryString = changedCategoryString + splitCategory[i]+" ";
+        }
+        changedCategoryString = changedCategoryString.trim();
+
+        //Changes for payment mode
+        String paymentToBeChanged = orderDetails.getModeOfPayment();
+        String changedPaymentString = "";
+        paymentToBeChanged = paymentToBeChanged.trim();// If in case user has given space initially
+        String[] splitPayment = paymentToBeChanged.split(" ");
+        for(int i=2;i<splitPayment.length;i++){
+            changedPaymentString = changedPaymentString + splitPayment[i]+" ";
+        }
+        changedPaymentString =  changedPaymentString.trim();
+        // Changes end
         contentValue.put(FUEL_TYPE,orderDetails.getFuelType());
-        contentValue.put(FUEL_CATEGORY,orderDetails.getCategory());
+        contentValue.put(FUEL_CATEGORY,changedCategoryString);
         contentValue.put(FUEL_QTY,orderDetails.getFuelQty());
         contentValue.put(FUEL_AMOUNT,orderDetails.getFuelAmount());
         contentValue.put(FULL_TANK,orderDetails.isFullTank());
-        contentValue.put(MODE_OF_PAYMENT,orderDetails.getModeOfPayment());
-
+        contentValue.put(MODE_OF_PAYMENT,changedPaymentString);
+        contentValue.put(COLUMN_TIMESTAMP,insertDateFormat());
         SQLiteDatabase db=getWritableDatabase();
         Long result = db.insert(TABLE_NAME,null,contentValue);
         db.close();
@@ -140,7 +163,7 @@ public class DbHandler extends SQLiteOpenHelper {
             singleOrder.setFuelAmount(c.getDouble(c.getColumnIndex(FUEL_AMOUNT)));
             singleOrder.setFullTank(c.getInt(c.getColumnIndex(FULL_TANK))>0);
             singleOrder.setModeOfPayment(c.getString(c.getColumnIndex(MODE_OF_PAYMENT)));
-            singleOrder.setOrderDateTime(changeDateFormat(c.getString(c.getColumnIndex(COLUMN_TIMESTAMP))));
+            singleOrder.setOrderDateTime(c.getString(c.getColumnIndex(COLUMN_TIMESTAMP)));
             allOrders.add(singleOrder);
             c.moveToNext();
         }
@@ -149,18 +172,13 @@ public class DbHandler extends SQLiteOpenHelper {
         return allOrders;
     }
 
-    public Date changeDateFormat(String date){
-        DateFormat df = new SimpleDateFormat("MMM dd, yyyy HH:mm:ss z");
-        df.setTimeZone(TimeZone.getTimeZone("UTC"));
-        Date startDate =new Date();
-        try {
-            startDate = df.parse(date);
-        }
-        catch (ParseException e) {
-            e.printStackTrace();
-        }
-        return startDate;
+
+    public String insertDateFormat(){
+        String stringDate = new SimpleDateFormat("dd/MM/yy HH:mm:ss").format(new Date());
+        return stringDate;
     }
+
+
 
     public String getOrderHistoryQuery(){
 
@@ -173,7 +191,7 @@ public class DbHandler extends SQLiteOpenHelper {
                         + FUEL_AMOUNT + " DECIMAL(17,2),"
                         + FULL_TANK + " BOOLEAN,"
                         + MODE_OF_PAYMENT + " TEXT,"
-                        + COLUMN_TIMESTAMP + " DATETIME DEFAULT CURRENT_TIMESTAMP"
+                        + COLUMN_TIMESTAMP + " TEXT "
                         + ")";
         return CREATE_TABLE_ORDER_HISTORY;
     }
