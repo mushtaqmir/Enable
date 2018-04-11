@@ -105,4 +105,12 @@ public class ActivityMain extends ToolBarActivity {
         builder.setMessage(message);
         builder.show();
     }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+
+        menu.getItem(0).setEnabled(false); // here pass the index of home menu item to disable it
+        return super.onPrepareOptionsMenu(menu);
+
+    }
 }
