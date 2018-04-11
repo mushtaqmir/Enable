@@ -57,6 +57,7 @@ public class ToolBarActivity extends AppCompatActivity {
             return true;
             case R.id.home:
                 Intent intent=new Intent(this,ActivityMain.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 return true;
 
