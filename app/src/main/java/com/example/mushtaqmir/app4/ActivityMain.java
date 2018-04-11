@@ -1,17 +1,24 @@
 package com.example.mushtaqmir.app4;
 
 import android.content.Intent;
+import android.app.Activity;
+import android.os.Handler;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.Toolbar;
+import android.view.WindowManager;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-
 import java.io.IOException;
+import java.io.Serializable;
+import java.util.List;
 import java.util.Locale;
 
 public class ActivityMain extends ToolBarActivity {
@@ -19,10 +26,11 @@ public class ActivityMain extends ToolBarActivity {
     private Button templateBtn;
     private Button chatBtn;
     private ImageButton speakerBtn;
-    private  TextToSpeech textToSpeech;
+    private TextToSpeech textToSpeech;
     private Button startBtn;
     private String message;
     DbHandler mydb;
+    boolean doubleBackToExitPressedOnce = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -110,14 +118,28 @@ public class ActivityMain extends ToolBarActivity {
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-
-        menu.getItem(0).setEnabled(false); // here pass the index of home menu item to disable it
+        menu.getItem(0).setVisible(false);
+       // menu.getItem(0).setEnabled(false); // here pass the index of home menu item to disable it
         return super.onPrepareOptionsMenu(menu);
 
     }
 
     @Override
     public void onBackPressed() {
-       // super.onBackPressed();
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
     }
 }
