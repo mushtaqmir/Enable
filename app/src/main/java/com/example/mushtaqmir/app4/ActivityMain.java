@@ -20,7 +20,7 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Locale;
 
-public class ActivityMain extends AppCompatActivity {
+public class ActivityMain extends ToolBarActivity {
 
     private Button templateBtn;
     private Button chatBtn;
@@ -96,7 +96,7 @@ public class ActivityMain extends AppCompatActivity {
 
     }
    public void openTemplateActivity(){
-        Intent intent=new Intent(this,MainActivity.class);
+        Intent intent=new Intent(this,TemplateActivity.class);
         startActivity(intent);
     }
     public void openChatActivity(){
@@ -142,5 +142,13 @@ public class ActivityMain extends AppCompatActivity {
         builder.setTitle(title);
         builder.setMessage(message);
         builder.show();
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+
+        menu.getItem(0).setEnabled(false); // here pass the index of home menu item to disable it
+        return super.onPrepareOptionsMenu(menu);
+
     }
 }

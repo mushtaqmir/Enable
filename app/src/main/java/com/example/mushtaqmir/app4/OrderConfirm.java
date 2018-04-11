@@ -19,13 +19,8 @@ import java.util.List;
  * Created by Anshul.Kumar on 3/27/2018.
  */
 
-<<<<<<< HEAD
-public class OrderConfirm extends AppCompatActivity  {
-
-=======
 public class OrderConfirm extends ToolBarActivity  {
-    
->>>>>>> c0bfa3406d471e89b0ec0000ee9afc9d2acbb681
+
     String txtWindshield = "";
     String txtFreeOil = "";
     @Override
