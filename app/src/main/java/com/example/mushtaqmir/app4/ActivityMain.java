@@ -26,7 +26,7 @@ public class ActivityMain extends ToolBarActivity {
     private Button templateBtn;
     private Button chatBtn;
     private ImageButton speakerBtn;
-    private  TextToSpeech textToSpeech;
+    private TextToSpeech textToSpeech;
     private Button startBtn;
     private String message;
     DbHandler mydb;
@@ -148,8 +148,8 @@ public class ActivityMain extends ToolBarActivity {
 
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-
-        menu.getItem(0).setEnabled(false); // here pass the index of home menu item to disable it
+        menu.getItem(0).setVisible(false);
+       // menu.getItem(0).setEnabled(false); // here pass the index of home menu item to disable it
         return super.onPrepareOptionsMenu(menu);
 
     }
