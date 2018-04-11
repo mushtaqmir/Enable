@@ -2,6 +2,7 @@ package com.example.mushtaqmir.app4;
 
 import android.content.Intent;
 import android.app.Activity;
+import android.os.Handler;
 import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
@@ -29,6 +30,7 @@ public class ActivityMain extends ToolBarActivity {
     private Button startBtn;
     private String message;
     DbHandler mydb;
+    boolean doubleBackToExitPressedOnce = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -154,6 +156,20 @@ public class ActivityMain extends ToolBarActivity {
 
     @Override
     public void onBackPressed() {
-       // super.onBackPressed();
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed();
+            return;
+        }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce=false;
+            }
+        }, 2000);
     }
 }
