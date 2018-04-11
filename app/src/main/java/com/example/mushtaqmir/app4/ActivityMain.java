@@ -151,4 +151,9 @@ public class ActivityMain extends ToolBarActivity {
         return super.onPrepareOptionsMenu(menu);
 
     }
+
+    @Override
+    public void onBackPressed() {
+       // super.onBackPressed();
+    }
 }
