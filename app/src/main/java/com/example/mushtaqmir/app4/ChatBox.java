@@ -42,6 +42,8 @@ public class ChatBox extends ToolBarActivity {
     private  ImageButton custBtn;
     EditText empText;
     ImageButton empBtn;
+    TextToSpeech textToSpeech;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,8 +89,28 @@ public class ChatBox extends ToolBarActivity {
                 }
             }
         });
-
-
+        custMsgListView.setOnItemClickListener(
+                new AdapterView.OnItemClickListener(){
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                       Message messageObj= (Message) parent.getItemAtPosition(position);
+                       if(messageObj.isEmployee()) {
+                           String msg = String.valueOf(messageObj.getMessage());
+                           //insert code here
+                           textToSpeech = new TextToSpeech(ChatBox.this, new TextToSpeech.OnInitListener() {
+                               @Override
+                               public void onInit(int status) {
+                                   if (status == TextToSpeech.SUCCESS) {
+                                       textToSpeech.setLanguage(Locale.US);
+                                       //   textToSpeech.setPitch((float) 0.6);
+                                       textToSpeech.speak(msg, TextToSpeech.QUEUE_FLUSH, null);
+                                   }
+                               }
+                           });
+                       }
+                    }
+                }
+        );
     }
     public void onMicTap(View v){
         if(v.getId()==R.id.micBtn){
