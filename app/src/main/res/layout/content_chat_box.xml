@@ -38,7 +38,8 @@
         android:layout_marginTop="550dp"
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp">
+        android:layout_marginRight="5dp"
+        android:id="@+id/lin_layout">
 
 
         <ImageButton
@@ -76,13 +77,12 @@
             android:id="@+id/empText"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
-            android:hint="Forecourt message"
+            android:hint="Forecourt"
             android:layout_alignParentTop="true"
             android:dropDownHeight="400dp"
             android:dropDownWidth="200dp"
             android:overlapAnchor="false"
-            android:popupBackground="#0FFF"
-            android:dropDownVerticalOffset="10dp"
+            android:popupBackground="#66FF"
             android:ems="10"
             android:inputType="textAutoComplete"
             android:singleLine="true"
