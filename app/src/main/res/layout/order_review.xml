@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffc400">
+    android:background="#ffffff">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -157,7 +157,7 @@
             android:layout_marginBottom="20dp"
             android:text="CONFIRM"
             android:theme="@style/ButtonAction"
-            android:background="#ffffff"
+            android:background="#ffc400"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -172,7 +172,7 @@
             android:layout_marginBottom="20dp"
             android:text="EDIT"
             android:theme="@style/ButtonAction"
-            android:background="#ffffff"
+            android:background="#ffc400"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffc400">
+    android:background="#ffffff">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -63,6 +63,7 @@
                     android:layout_marginRight="57dp"
                     android:width="320dp"
                     style="@style/FontStylefotterLand"
+                    android:theme="@style/MyRaidoButtonTwo"
                     android:checked="false"
                     android:text="@string/fuelTypePetrolStr"
                     tools:layout_editor_absoluteX="34dp"
@@ -74,6 +75,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="70dp"
                     style="@style/FontStylefotterLand"
+                    android:theme="@style/MyRaidoButtonTwo"
                     android:width="320dp"
                     android:checked="false"
                     android:text="@string/fuelTypeDieselStr"
@@ -121,6 +123,7 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
                     style="@style/FontStylefotterLand"
+                    android:theme="@style/MyRaidoButtonTwo"
                     android:width="320dp"
                     android:checked="false"
                     android:text="@string/fuelVpowerStr"
@@ -135,6 +138,7 @@
                     android:width="320dp"
                     android:checked="false"
                     style="@style/FontStylefotterLand"
+                    android:theme="@style/MyRaidoButtonTwo"
                     android:duplicateParentState="false"
                     android:text="@string/fuelUnleadedStr"
                     tools:layout_editor_absoluteX="265dp"
@@ -165,6 +169,7 @@
                     android:layout_marginRight="10dp"
                     android:text="@string/fullTankStr"
                     style="@style/FontStylefotterLand"
+                    android:theme="@style/MyRaidoButtonTwo"
                     app:layout_constraintBaseline_toBaselineOf="@+id/radioButton4"
                     app:layout_constraintLeft_toLeftOf="parent"
                     tools:layout_editor_absoluteX="34dp"
@@ -179,6 +184,7 @@
                     android:layout_marginRight="10dp"
                     android:text="@string/amountStr"
                     style="@style/FontStylefotterLand"
+                    android:theme="@style/MyRaidoButtonTwo"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/radioButton2" />
@@ -190,6 +196,7 @@
                     android:layout_marginEnd="20dp"
                     android:text="@string/quantityStr"
                     style="@style/FontStylefotterLand"
+                    android:theme="@style/MyRaidoButtonTwo"
                     app:layout_constraintBaseline_toBaselineOf="@+id/radioButton4"
                     app:layout_constraintRight_toRightOf="parent" />
             </RadioGroup>
@@ -263,6 +270,7 @@
                     android:layout_marginRight="60dp"
                     android:width="320dp"
                     style="@style/FontStylefotterLand"
+                    android:theme="@style/MyRaidoButtonTwo"
                     android:checked="false"
                     android:text="Yes"
                     tools:layout_editor_absoluteX="34dp"
@@ -277,6 +285,7 @@
                     android:width="320dp"
                     android:checked="false"
                     android:duplicateParentState="false"
+                    android:theme="@style/MyRaidoButtonTwo"
                     android:text="No"
                     style="@style/FontStylefotterLand"
                     tools:layout_editor_absoluteX="265dp"
@@ -323,7 +332,8 @@
                     android:layout_gravity="center"
                     android:width="320dp"
                     style="@style/FontStylefotterLand"
-                    android:checked="false"
+                    android:theme="@style/MyRaidoButtonTwo"
+
                     android:text="Yes"
                     tools:layout_editor_absoluteX="34dp"
                     tools:layout_editor_absoluteY="145dp" />
@@ -336,7 +346,8 @@
                     android:layout_gravity="center"
                     android:width="320dp"
                     style="@style/FontStylefotterLand"
-                    android:checked="false"
+                    android:theme="@style/MyRaidoButtonTwo"
+                    android:checked="true"
                     android:duplicateParentState="false"
                     android:text="No"
                     tools:layout_editor_absoluteX="265dp"
@@ -357,7 +368,7 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/FreeOilChange"
                 android:theme="@style/ButtonAction"
-                android:background="#ffffff"
+                android:background="#ffc400"
                 />
 
 

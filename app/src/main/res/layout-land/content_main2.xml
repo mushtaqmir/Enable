@@ -58,32 +58,51 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="290dp"
-            android:background="#ffa500">
+            android:gravity="center_horizontal"
+            android:background="#ffffff">
 
             <Button
                 android:id="@+id/templateStartBtn"
-                android:layout_width="223dp"
-                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
                 android:text="Template"
                 tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="529dp" />
+                tools:layout_editor_absoluteY="529dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:theme="@style/ButtonAction"
+                android:background="#ffc400"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
 
             <Button
                 android:id="@+id/chatBtn"
-                android:layout_width="223dp"
-                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
                 android:text="Chat"
                 tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="529dp" />
+                tools:layout_editor_absoluteY="529dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:theme="@style/ButtonAction"
+                android:background="#ffc400"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
 
 
             <Button
                 android:id="@+id/startBtn"
-                android:layout_width="223dp"
-                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
                 android:text="Start"
                 tools:layout_editor_absoluteX="263dp"
-                tools:layout_editor_absoluteY="529dp" />
+                tools:layout_editor_absoluteY="529dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:theme="@style/ButtonAction"
+                android:background="#ffc400"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"/>
 
         </LinearLayout>
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:layout_editor_absoluteY="81dp"
-    android:background="#ffc400">
+    android:background="#ffffff">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -153,18 +153,6 @@
             android:text="Fuel Amount"
             app:layout_constraintBaseline_toBaselineOf="@+id/Fuel"/>
 
-        <Button
-            android:id="@+id/StartNew"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="140dp"
-            android:layout_marginTop="400dp"
-            android:layout_marginBottom="20dp"
-            android:gravity="center"
-            android:theme="@style/ButtonAction"
-            android:background="#ffffff"
-            android:text="Start New Order"
-            app:layout_constraintTop_toBottomOf="@+id/paymentMode"/>
        </FrameLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>

@@ -40,7 +40,6 @@ public class OrderConfirm extends ToolBarActivity  {
             final TextView fuelCategory = (TextView) findViewById(R.id.fuelCategory);
             final TextView fuel = (TextView) findViewById(R.id.Fuel);
             final TextView fuelTxt = (TextView) findViewById(R.id.FuelTxt);
-            final Button StartNew = (Button) findViewById(R.id.StartNew);
             final TextView paymentMode = (TextView) findViewById(R.id.paymentMode);
             final TextView WindshieldCleanReview = (TextView) findViewById(R.id.WindshieldCleanReview);
             final TextView freeOilRev = (TextView) findViewById(R.id.freeOilRev);
@@ -67,15 +66,7 @@ public class OrderConfirm extends ToolBarActivity  {
                     }
                 }
 
-                //Button OnCLickLISTNER
-                StartNew.setOnClickListener(
-                        new View.OnClickListener() {
-                            public void onClick(View v) {
-                                Intent launchStart= new Intent(OrderConfirm.this,ActivityMain.class);
-                                startActivity(launchStart);
-                            }
 
-                        });
 
            }
         }

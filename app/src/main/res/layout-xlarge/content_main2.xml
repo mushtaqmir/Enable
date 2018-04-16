@@ -36,14 +36,21 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
         android:layout_marginTop="580dp"
-        android:background="#ffa500">
+        android:background="#ffffff">
 
         <Button
             android:id="@+id/templateStartBtn"
             android:layout_width="337dp"
             android:layout_height="wrap_content"
             android:text="Template"
+            android:theme="@style/ButtonAction"
+            android:background="#ffc400"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="529dp" />
 
@@ -52,6 +59,12 @@
             android:layout_width="337dp"
             android:layout_height="wrap_content"
             android:text="Chat"
+            android:theme="@style/ButtonAction"
+            android:background="#ffc400"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="529dp" />
 
@@ -61,6 +74,12 @@
             android:layout_width="337dp"
             android:layout_height="wrap_content"
             android:text="Start"
+            android:theme="@style/ButtonAction"
+            android:background="#ffc400"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
             tools:layout_editor_absoluteX="263dp"
             tools:layout_editor_absoluteY="529dp" />
 
