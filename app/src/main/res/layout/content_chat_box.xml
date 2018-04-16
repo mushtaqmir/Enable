@@ -72,23 +72,30 @@
             android:scaleType="fitCenter"
             android:src="@drawable/send" />
 
-        <EditText
+        <AutoCompleteTextView
             android:id="@+id/empText"
             android:layout_width="110dp"
             android:layout_height="wrap_content"
-            android:hint="Employee message"
+            android:hint="Forecourt message"
+            android:layout_alignParentTop="true"
+            android:dropDownHeight="400dp"
+            android:dropDownWidth="200dp"
+            android:overlapAnchor="false"
+            android:popupBackground="#0FFF"
+            android:dropDownVerticalOffset="10dp"
             android:ems="10"
-            android:inputType="textMultiLine"
+            android:inputType="textAutoComplete"
+            android:singleLine="true"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="553dp" />
 
-        <ImageButton
-            android:id="@+id/empBtn"
-            android:layout_width="45dp"
-            android:layout_height="44dp"
-            android:layout_weight="1"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
+            <ImageButton
+                android:id="@+id/empBtn"
+                android:layout_width="45dp"
+                android:layout_height="44dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
             android:src="@drawable/send" />
     </LinearLayout>
 
