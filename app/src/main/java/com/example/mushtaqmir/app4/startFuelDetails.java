@@ -55,9 +55,6 @@ public class startFuelDetails extends ToolBarActivity {
         final RadioButton fuelTypeVPowerDiesel = (RadioButton) findViewById(R.id.fuelTypeVPowerDiesel);
         final RadioButton fuelTypeDieselUnleaded = (RadioButton) findViewById(R.id.fuelTypeDieselUnleaded);
 
-        //final TextView textView = findViewById(R.id.fuelTypeView);
-        //final RadioGroup fuelCategoryRadioGroup = (RadioGroup) findViewById(R.id.fuelCategoryRadioGroup);
-
         final TextView WindshieldCleanTxt = findViewById(R.id.WindshieldCleanTxt);
         final RadioGroup WindshieldClean = (RadioGroup) findViewById(R.id.WindshieldClean);
         final RadioButton WindshieldCleanYes = (RadioButton) findViewById(R.id.WindshieldCleanYes);
@@ -68,8 +65,6 @@ public class startFuelDetails extends ToolBarActivity {
         final RadioGroup FreeOilChange = (RadioGroup) findViewById(R.id.FreeOilChange);
         final RadioButton FreeOilChangeYes = (RadioButton) findViewById(R.id.FreeOilChangeYes);
         final RadioButton FreeOilChangeNo = (RadioButton) findViewById(R.id.FreeOilChangeNo);
-
-
 
         fuelTypeRadioGroup.setVisibility(View.VISIBLE);
         fuelQuantityRadioGroup.setVisibility(View.INVISIBLE);

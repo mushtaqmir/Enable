@@ -20,6 +20,7 @@
         android:layout_height="50dp"
         android:layout_marginLeft="5dp"
         android:layout_weight="1"
+        style="@style/FontStylefotter"
         android:text="TextView" />
 
 </LinearLayout>
