@@ -94,10 +94,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="180dp"
             android:layout_gravity="center_horizontal"
-            android:background="#ffc400"
+            style="@style/TextViewShadow"
+            android:background="@drawable/employee_textview"
             android:gravity="center"
             android:text="CONFIRM"
-            android:theme="@style/ButtonAction"
             app:layout_constraintTop_toBottomOf="@+id/modeOfPayRadioGrp"
 
             />

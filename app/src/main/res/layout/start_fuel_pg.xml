@@ -8,8 +8,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-       >
+        android:layout_height="wrap_content">
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/frameLayout"
@@ -28,13 +27,13 @@
 
             <TextView
                 android:id="@+id/indicate"
+                style="@style/FontStyleHdr"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
                 android:gravity="center_horizontal"
                 android:text="@string/indicateStr"
-                style="@style/FontStyleHdr"
                 app:layout_constraintBottom_toTopOf="@+id/fuelTypeRadioGroup"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -60,8 +59,8 @@
                     android:id="@+id/fuelTypeVPowerPetrol"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
                     android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"
                     android:checked="false"
                     android:drawableRight="@drawable/shell_v_power_petrol_150_60"
                     android:theme="@style/MyRaidoButtonTwo" />
@@ -75,12 +74,13 @@
                     android:drawableRight="@drawable/shell_petrol_regular"
                     android:theme="@style/MyRaidoButtonTwo"
                     app:layout_constraintBaseline_toBaselineOf="@+id/fuelTypeVPowerPetrol" />
+
                 <RadioButton
                     android:id="@+id/fuelTypeVPowerDiesel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
                     android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"
                     android:checked="false"
                     android:drawableRight="@drawable/shell_v_power_diesel_150_60"
                     android:theme="@style/MyRaidoButtonTwo" />
@@ -153,12 +153,12 @@
 
             <TextView
                 android:id="@+id/enterQty"
+                style="@style/FontStylefotter"
                 android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="24dp"
                 android:gravity="center_horizontal"
-                style="@style/FontStylefotter"
                 android:text="@string/enterQty"
                 app:layout_constraintBaseline_toBaselineOf="@+id/editQty"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -166,6 +166,7 @@
 
             <EditText
                 android:id="@+id/editQty"
+                style="@style/FontStylefotter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
@@ -173,7 +174,6 @@
                 android:layout_marginTop="5dp"
                 android:ems="10"
                 android:gravity="center_horizontal"
-                style="@style/FontStylefotter"
                 android:inputType="numberDecimal"
                 app:layout_constraintBottom_toTopOf="@+id/WindshieldCleanTxt"
                 app:layout_constraintLeft_toLeftOf="parent"
@@ -211,31 +211,31 @@
 
                 <RadioButton
                     android:id="@+id/WindshieldCleanYes"
+                    style="@style/FontStylefotter"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="60dp"
                     android:width="320dp"
-                    style="@style/FontStylefotter"
-                    android:theme="@style/MyRaidoButtonTwo"
                     android:checked="false"
                     android:text="Yes"
+                    android:theme="@style/MyRaidoButtonTwo"
                     tools:layout_editor_absoluteX="34dp"
                     tools:layout_editor_absoluteY="145dp" />
 
                 <RadioButton
                     android:id="@+id/WindshieldCleanNo"
+                    style="@style/FontStylefotter"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginLeft="70dp"
                     android:width="320dp"
                     android:checked="true"
-                    style="@style/FontStylefotter"
-                    android:theme="@style/MyRaidoButtonTwo"
                     android:duplicateParentState="false"
                     android:text="No"
+                    android:theme="@style/MyRaidoButtonTwo"
                     tools:layout_editor_absoluteX="265dp"
                     tools:layout_editor_absoluteY="163dp" />
             </RadioGroup>
@@ -275,50 +275,49 @@
 
                 <RadioButton
                     android:id="@+id/FreeOilChangeYes"
+                    style="@style/FontStylefotter"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="60dp"
-                    android:layout_gravity="center"
-                    style="@style/FontStylefotter"
                     android:width="320dp"
                     android:checked="false"
-                    android:theme="@style/MyRaidoButtonTwo"
                     android:text="Yes"
+                    android:theme="@style/MyRaidoButtonTwo"
                     tools:layout_editor_absoluteX="34dp"
                     tools:layout_editor_absoluteY="145dp" />
 
                 <RadioButton
                     android:id="@+id/FreeOilChangeNo"
+                    style="@style/FontStylefotter"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="70dp"
                     android:layout_gravity="center"
-                    style="@style/FontStylefotter"
+                    android:layout_marginLeft="70dp"
                     android:width="320dp"
                     android:checked="true"
-                    android:theme="@style/MyRaidoButtonTwo"
                     android:duplicateParentState="false"
                     android:text="No"
+                    android:theme="@style/MyRaidoButtonTwo"
                     tools:layout_editor_absoluteX="265dp"
                     tools:layout_editor_absoluteY="163dp" />
             </RadioGroup>
 
 
-
             <Button
                 android:id="@+id/submitButton"
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="5dp"
+                style="@style/TextViewShadow"
+                android:background="@drawable/employee_textview"
                 android:text="@string/submitButton"
-                android:theme="@style/ButtonAction"
-                android:background="#ffc400"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/FreeOilChange"
-                />
+                app:layout_constraintTop_toBottomOf="@+id/FreeOilChange" />
 
 
         </android.support.constraint.ConstraintLayout>
