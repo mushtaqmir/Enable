@@ -58,7 +58,7 @@
             android:layout_width="122dp"
             android:layout_height="wrap_content"
             android:windowSoftInputMode="adjustResize"
-            android:hint="Customer message"
+            android:hint="Customer"
             android:ems="10"
             android:inputType="textMultiLine"
             tools:layout_editor_absoluteX="16dp"
@@ -84,8 +84,10 @@
             android:overlapAnchor="false"
             android:popupBackground="#66FF"
             android:ems="10"
-            android:inputType="textAutoComplete"
-            android:singleLine="true"
+            android:inputType="textMultiLine"
+            android:singleLine="false"
+            android:scrollHorizontally="false"
+            android:ellipsize="none"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="553dp" />
 

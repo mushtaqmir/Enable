@@ -55,9 +55,10 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:theme="@style/ButtonAction"
-                android:background="#ffc400"
+                android:background="@drawable/employee_textview"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"/>
+                android:layout_marginRight="10dp"
+                style="@style/TextViewShadow"/>
 
             <Button
                 android:id="@+id/chatBtn"
@@ -67,11 +68,12 @@
                 tools:layout_editor_absoluteX="16dp"
                 tools:layout_editor_absoluteY="529dp"
                 android:theme="@style/ButtonAction"
-                android:background="#ffc400"
+                android:background="@drawable/employee_textview"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"/>
+                android:layout_marginRight="10dp"
+                style="@style/TextViewShadow"/>
 
 
             <Button
@@ -84,9 +86,10 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:theme="@style/ButtonAction"
-                android:background="#ffc400"
+                android:background="@drawable/employee_textview"
                 android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"/>
+                android:layout_marginRight="10dp"
+                style="@style/TextViewShadow"/>
 
         </LinearLayout>
 
