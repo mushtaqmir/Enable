@@ -36,9 +36,9 @@
             android:id="@+id/modeOfPayRadioGrp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:layout_marginBottom="215dp"
             android:layout_marginTop="50dp"
-            android:layout_gravity="center_horizontal"
             android:orientation="vertical"
             android:padding="10dp"
             android:gravity="center"
@@ -48,7 +48,7 @@
 
             <RadioButton
                 android:id="@+id/payByShellCashCard"
-                android:layout_width="220dp"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="15dp"
                 android:width="350dp"
@@ -61,7 +61,7 @@
 
             <RadioButton
                 android:id="@+id/payByCash"
-                android:layout_width="220dp"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="15dp"
                 android:width="320dp"
@@ -75,7 +75,7 @@
 
             <RadioButton
                 android:id="@+id/payByCard"
-                android:layout_width="220dp"
+                android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="15dp"
                 android:width="320dp"
@@ -92,12 +92,12 @@
             android:id="@+id/confirmPayBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:theme="@style/ButtonAction"
-            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="180dp"
             android:background="#ffc400"
-            android:layout_marginTop="200dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
             android:text="CONFIRM"
+            android:theme="@style/ButtonAction"
             app:layout_constraintTop_toBottomOf="@+id/modeOfPayRadioGrp"
 
             />

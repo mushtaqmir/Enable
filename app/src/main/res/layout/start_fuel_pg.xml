@@ -14,7 +14,7 @@
         <android.support.constraint.ConstraintLayout
             android:id="@+id/frameLayout"
             android:layout_width="match_parent"
-            android:layout_height="800dp"
+            android:layout_height="500dp"
             android:layout_marginBottom="20dp"
             android:layout_marginEnd="10dp"
             android:layout_marginLeft="10dp"
@@ -73,26 +73,8 @@
                     android:layout_marginBottom="10dp"
                     android:checked="false"
                     android:drawableRight="@drawable/shell_petrol_regular"
-                    android:theme="@style/MyRaidoButtonTwo" />
-                <!--  </RadioGroup>
-
-            <RadioGroup
-                android:id="@+id/fuelCategoryRadioGroup"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="5dp"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal"
-                android:padding="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/fuelTypeRadioGroup"
-                app:layout_constraintVertical_bias="0.027">
--->
-
+                    android:theme="@style/MyRaidoButtonTwo"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/fuelTypeVPowerPetrol" />
                 <RadioButton
                     android:id="@+id/fuelTypeVPowerDiesel"
                     android:layout_width="wrap_content"
@@ -196,7 +178,6 @@
                 app:layout_constraintBottom_toTopOf="@+id/WindshieldCleanTxt"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-
                 app:layout_constraintTop_toBottomOf="@id/fuelQuantityRadioGroup"
                 app:layout_constraintVertical_bias="0.0" />
 

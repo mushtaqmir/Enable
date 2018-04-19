@@ -9,6 +9,7 @@
         android:layout_width="900dp"
         android:layout_height="50dp"
         android:layout_weight="1"
+        style="@style/FontStyleFootEmpl"
         android:text="TextView" />
 
     <ImageView
