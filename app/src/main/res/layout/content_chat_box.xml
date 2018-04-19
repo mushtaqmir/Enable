@@ -39,12 +39,14 @@
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:id="@+id/lin_layout">
+        android:id="@+id/lin_layout"
+        android:background="@drawable/chatbox_textbar"
+        >
 
 
         <ImageButton
             android:id="@+id/micBtn"
-            android:layout_width="45dp"
+            android:layout_width="15dp"
             android:layout_height="44dp"
             android:layout_weight="1"
             android:adjustViewBounds="true"
@@ -55,27 +57,30 @@
 
         <EditText
             android:id="@+id/custText"
-            android:layout_width="122dp"
+            android:layout_width="145dp"
             android:layout_height="wrap_content"
             android:windowSoftInputMode="adjustResize"
             android:hint="Customer"
             android:ems="10"
             android:inputType="textMultiLine"
             tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="553dp" />
+            tools:layout_editor_absoluteY="553dp"
+            android:layout_gravity="bottom"/>
 
         <ImageButton
             android:id="@+id/custBtn"
-            android:layout_width="45dp"
-            android:layout_height="44dp"
+            android:layout_width="24dp"
+            android:layout_height="30dp"
             android:layout_weight="1"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/send" />
+            android:src="@drawable/ic_send_black_24dp"
+            android:background="@android:color/white"
+            android:layout_gravity="center_vertical"/>
 
         <AutoCompleteTextView
             android:id="@+id/empText"
-            android:layout_width="110dp"
+            android:layout_width="145dp"
             android:layout_height="wrap_content"
             android:hint="Forecourt"
             android:layout_alignParentTop="true"
@@ -89,16 +94,19 @@
             android:scrollHorizontally="false"
             android:ellipsize="none"
             tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="553dp" />
+            tools:layout_editor_absoluteY="553dp"
+            android:layout_gravity="bottom"/>
 
             <ImageButton
                 android:id="@+id/empBtn"
-                android:layout_width="45dp"
-                android:layout_height="44dp"
+                android:layout_width="24dp"
+                android:layout_height="30dp"
                 android:layout_weight="1"
                 android:adjustViewBounds="true"
                 android:scaleType="fitCenter"
-            android:src="@drawable/send" />
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_send_black_24dp"
+                android:background="@android:color/white"/>
     </LinearLayout>
 
 </RelativeLayout>
