@@ -35,7 +35,8 @@
         android:layout_marginTop="9dp"
         android:text="Add"
         android:theme="@style/ButtonAction"
-        android:background="#ffc400"
+        android:background="@drawable/employee_textview"
+        style="@style/TextViewShadow"
         tools:layout_editor_absoluteX="307dp"
         tools:layout_editor_absoluteY="539dp" />
 
