@@ -34,7 +34,7 @@
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="550dp"
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="5dp"
@@ -78,7 +78,7 @@
             android:background="@android:color/white"
             android:layout_gravity="center_vertical"/>
 
-        <AutoCompleteTextView
+        <com.example.mushtaqmir.app4.AutoCompleteTextViewImpl
             android:id="@+id/empText"
             android:layout_width="145dp"
             android:layout_height="wrap_content"

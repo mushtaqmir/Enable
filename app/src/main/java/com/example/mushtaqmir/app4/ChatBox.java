@@ -4,12 +4,14 @@ import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.speech.tts.TextToSpeech;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.AppCompatAutoCompleteTextView;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.ContextMenu;
@@ -46,11 +48,11 @@ public class ChatBox extends ToolBarActivity implements TextWatcher{
     List<String> empMsgList;
     private  EditText custText;
     private  ImageButton custBtn;
-    AutoCompleteTextView empText;
+    AutoCompleteTextViewImpl empText;
     ImageButton empBtn;
     TextToSpeech textToSpeech;
     DbHandler dbHandler;
-   private  String[] suggtlist={"Hello","Welcome","Welcome2","Welcome3","Welcome4"};
+   private  String[] suggtlist={"Hello","Welcome to Shell","How can i help you?","Thank you for visiting us.","We have an offer for you"};
    List list=new ArrayList(Arrays.asList(suggtlist));
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,7 +93,14 @@ public class ChatBox extends ToolBarActivity implements TextWatcher{
             }
         });
     //Autocomplete i chat for suggestions
-        empText=(AutoCompleteTextView) findViewById(R.id.empText);
+
+      // empText=(AppCompatAutoCompleteTextView) findViewById(R.id.empText);
+        empText=(AutoCompleteTextViewImpl)findViewById(R.id.empText);
+       // empText=new AppCompatAutoCompleteTextView(this);
+       // empText=(AutoCompleteTextView) empText;
+//        Rect outRect=new Rect();
+//        outRect.bottom=-3000;
+//        empText.getWindowVisibleDisplayFrame(outRect);
         empText.addTextChangedListener(this);
 
         //stringArrayAdapter.notifyDataSetChanged();
