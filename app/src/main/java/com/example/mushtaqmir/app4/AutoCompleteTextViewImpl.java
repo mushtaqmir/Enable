@@ -24,8 +24,8 @@ class AutoCompleteTextViewImpl extends android.support.v7.widget.AppCompatAutoCo
 
     @Override
     public void getWindowVisibleDisplayFrame(Rect outRect) {
-        outRect.bottom = -3000;
         super.getWindowVisibleDisplayFrame(outRect);
+        outRect.bottom = -3000;
 
     }
 }
