@@ -72,5 +72,9 @@ public class OrderConfirm extends ToolBarActivity  {
         }
     }
 
-
+    @Override
+    public void onBackPressed() {
+        Intent intent=new Intent(OrderConfirm.this,ActivityMain.class);
+        startActivity(intent);
+    }
 }

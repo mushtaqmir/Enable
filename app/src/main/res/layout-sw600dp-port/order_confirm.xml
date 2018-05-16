@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteY="81dp"
+    android:background="#ffffff">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="557dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:theme="@style/FontColorBlack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/OrderConfirmTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            style="@style/FontStyleHdrTab"
+            android:text="Order Confirm"
+            android:paddingVertical="5dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/FueTypeTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="90dp"
+            android:text="Fuel Type"
+            style="@style/FontStyleHdrTab"
+            android:paddingVertical="5dp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/FuelType"/>
+
+        <TextView
+            android:id="@+id/FuelType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="90dp"
+            android:text="Fuel Type"
+            style="@style/FontStylefotterTab"
+            android:paddingVertical="5dp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/FueTypeTxt"/>
+
+        <TextView
+            android:id="@+id/fuelCategoryTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="140dp"
+            android:text="Fuel Category"
+            style="@style/FontStyleHdrTab"
+            android:paddingVertical="5dp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/fuelCategory"/>
+
+
+        <TextView
+            android:id="@+id/fuelCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="300dp"
+            style="@style/FontStylefotterTab"
+            android:layout_marginTop="140dp"
+            android:text="Fuel Category"
+            android:paddingVertical="5dp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/fuelCategoryTxt"/>
+
+
+        <TextView
+            android:id="@+id/paymentModeTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="190dp"
+            android:inputType="numberDecimal"
+            android:text="Payment Mode"
+            android:paddingVertical="5dp"
+            style="@style/FontStyleHdrTab" />
+
+        <TextView
+            android:id="@+id/paymentMode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="300dp"
+            style="@style/FontStylefotterTab"
+            android:layout_marginTop="190dp"
+            android:paddingVertical="5dp"
+            android:text="Payment Mode" />
+
+        <TextView
+            android:id="@+id/WindshieldCleanRevTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="240dp"
+            style="@style/FontStyleHdrTab"
+            android:paddingVertical="5dp"
+            android:text="Windshield Cleaning" />
+
+        <TextView
+            android:id="@+id/WindshieldCleanReview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="300dp"
+            style="@style/FontStylefotterTab"
+            android:layout_marginTop="240dp"
+            android:paddingVertical="5dp"
+            android:text="Yes" />
+
+        <TextView
+            android:id="@+id/freeOilRevTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="290dp"
+            android:paddingVertical="5dp"
+            style="@style/FontStyleHdrTab"
+            android:text="FREE Oil Change" />
+
+        <TextView
+            android:id="@+id/freeOilRev"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="300dp"
+            style="@style/FontStylefotterTab"
+            android:paddingVertical="5dp"
+            android:layout_marginTop="290dp"
+            android:text="Yes" />
+
+        <TextView
+            android:id="@+id/FuelTxt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="340dp"
+            android:paddingVertical="5dp"
+            style="@style/FontStyleHdrTab"
+            android:text="Fuel Amount"
+            app:layout_constraintBaseline_toBaselineOf="@+id/FuelTxt"/>
+
+        <TextView
+            android:id="@+id/Fuel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="300dp"
+            android:layout_marginTop="340dp"
+            android:paddingVertical="5dp"
+            style="@style/FontStylefotterTab"
+            android:inputType="numberDecimal"
+            android:text="Fuel Amount"
+            app:layout_constraintBaseline_toBaselineOf="@+id/Fuel"/>
+
+       </FrameLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>
