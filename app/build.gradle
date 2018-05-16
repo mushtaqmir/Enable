@@ -32,3 +32,20 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     compile 'de.codecrafters.tableview:tableview:2.8.0'
 }
+buildscript {
+  repositories {
+    mavenCentral()
+  }
+
+  dependencies {
+    classpath "com.newrelic.agent.android:agent-gradle-plugin:5.14.0"
+  }
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  compile 'com.newrelic.agent.android:android-agent:5.14.0'
+}

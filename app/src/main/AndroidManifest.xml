@@ -88,6 +88,8 @@
                 android:value=".StartActivity" />
         </activity>
         <activity android:name=".ToolBarActivity"></activity>
-    </application>
 
+    </application>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 </manifest>
