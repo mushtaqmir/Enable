@@ -10,17 +10,14 @@
     tools:context="com.example.mushtaqmir.app4.TemplateActivity"
     tools:showIn="@layout/activity_main">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="60dp"
-    android:layout_marginTop="10dp">
+
     <EditText
         android:id="@+id/templateTextInput"
         android:layout_width="500dp"
         android:layout_height="60dp"
         android:layout_alignTop="@+id/templateAddButton"
         android:layout_marginEnd="12dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="25dp"
         android:layout_toStartOf="@+id/templateAddButton"
         android:ems="10"
         android:hint="Enter Message Here"
@@ -35,19 +32,21 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
         android:layout_marginEnd="9dp"
-        android:theme="@style/ButtonAction"
-        android:background="#ffc400"
+        android:layout_marginTop="20dp"
         android:text="Add"
+        android:theme="@style/ButtonAction"
+        android:background="@drawable/employee_textview"
+        style="@style/TextViewShadow"
         tools:layout_editor_absoluteX="307dp"
         tools:layout_editor_absoluteY="539dp" />
-</LinearLayout>
+
     <ListView
         android:id="@+id/templateListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentStart="true"
+        android:layout_below="@+id/templateTextInput"
         android:drawSelectorOnTop="false"
-        android:layout_marginTop="90dp"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp"></ListView>
 

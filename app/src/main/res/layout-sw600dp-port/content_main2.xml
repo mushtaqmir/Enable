@@ -14,13 +14,13 @@
         <LinearLayout
             android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="90dp"
             android:layout_marginTop="5dp">
 
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="540dp"
-                android:layout_height="60dp"
+                android:layout_height="90dp"
                 android:layout_alignParentStart="true"
                 android:scaleType="fitStart"
                 android:src="@drawable/logo" />
@@ -28,7 +28,7 @@
             <ImageButton
                 android:id="@+id/speakerBtn"
                 android:layout_width="63dp"
-                android:layout_height="55dp"
+                android:layout_height="85dp"
                 android:layout_alignParentEnd="true"
                 android:layout_below="@+id/linearLayout"
                 android:background="@drawable/oval"
@@ -41,7 +41,7 @@
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="775dp"
+            android:layout_marginTop="765dp"
             android:gravity="center_horizontal"
             android:background="#ffffff">
 
@@ -50,28 +50,28 @@
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:text="Template"
-                android:theme="@style/ButtonAction"
-                android:background="#ffc400"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="529dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:layout_marginRight="10dp"
+                android:background="@drawable/employee_textview"
                 android:layout_marginLeft="10dp"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="529dp" />
+                android:layout_marginRight="10dp"
+                style="@style/TextViewShadow"/>
 
             <Button
                 android:id="@+id/chatBtn"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:text="Chat"
-                android:theme="@style/ButtonAction"
-                android:background="#ffc400"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="529dp"
+                android:background="@drawable/employee_textview"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="529dp" />
+                android:layout_marginRight="10dp"
+                style="@style/TextViewShadow"/>
 
 
             <Button
@@ -79,26 +79,27 @@
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:text="Start"
-                android:theme="@style/ButtonAction"
-                android:background="#ffc400"
+                tools:layout_editor_absoluteX="263dp"
+                tools:layout_editor_absoluteY="529dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:layout_marginRight="10dp"
+                android:background="@drawable/employee_textview"
                 android:layout_marginLeft="10dp"
-                tools:layout_editor_absoluteX="263dp"
-                tools:layout_editor_absoluteY="529dp" />
+                android:layout_marginRight="10dp"
+                style="@style/TextViewShadow"/>
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="70dp"
-            android:layout_marginBottom="60dp">
+            android:layout_marginBottom="60dp"
+            android:layout_marginTop="70dp">
 
             <ImageView
                 android:id="@+id/pumpImageView"
                 android:layout_width="wrap_content"
-                android:layout_height="700dp"
+                android:layout_height="670dp"
                 android:layout_alignBottom="@+id/linearLayout"
                 android:layout_alignEnd="@+id/linearLayout2"
                 android:scaleType="fitCenter"

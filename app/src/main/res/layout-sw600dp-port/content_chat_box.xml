@@ -5,7 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="60dp"
     android:focusableInTouchMode="true"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.mushtaqmir.app4.ChatBox"
@@ -14,14 +13,14 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="760dp"
         android:layout_marginBottom="5dp"
         android:layout_marginTop="10dp">
 
         <ListView
             android:id="@+id/custMsgListView"
             android:layout_width="match_parent"
-            android:layout_height="690dp"
+            android:layout_height="755dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
             android:layout_marginBottom="20dp"
@@ -36,10 +35,13 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="710dp"
+        android:layout_marginTop="765dp"
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp">
+        android:layout_marginRight="5dp"
+        android:id="@+id/lin_layout"
+        android:background="@drawable/chatbox_textbar"
+        >
 
 
         <ImageButton
@@ -56,41 +58,55 @@
         <EditText
             android:id="@+id/custText"
             android:layout_width="227dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:windowSoftInputMode="adjustResize"
-            android:hint="Customer message"
+            android:hint="Customer"
             android:ems="10"
             android:inputType="textMultiLine"
             tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="553dp" />
+            tools:layout_editor_absoluteY="553dp"
+            android:layout_gravity="bottom"/>
 
         <ImageButton
             android:id="@+id/custBtn"
             android:layout_width="45dp"
-            android:layout_height="44dp"
+            android:layout_height="30dp"
             android:layout_weight="1"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/send" />
+            android:src="@drawable/ic_send_black_24dp"
+            android:background="@android:color/white"
+            android:layout_gravity="center_vertical"/>
 
-        <EditText
+        <com.example.mushtaqmir.app4.AutoCompleteTextViewImpl
             android:id="@+id/empText"
             android:layout_width="227dp"
-            android:layout_height="wrap_content"
-            android:hint="Employee message"
+            android:layout_height="match_parent"
+            android:hint="Forecourt"
+            android:layout_alignParentTop="true"
+            android:dropDownHeight="400dp"
+            android:dropDownWidth="200dp"
+            android:overlapAnchor="false"
+            android:popupBackground="#66FF"
             android:ems="10"
             android:inputType="textMultiLine"
+            android:singleLine="false"
+            android:scrollHorizontally="false"
+            android:ellipsize="none"
             tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="553dp" />
+            tools:layout_editor_absoluteY="553dp"
+            android:layout_gravity="bottom"/>
 
         <ImageButton
             android:id="@+id/empBtn"
             android:layout_width="45dp"
-            android:layout_height="44dp"
+            android:layout_height="30dp"
             android:layout_weight="1"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
-            android:src="@drawable/send" />
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_send_black_24dp"
+            android:background="@android:color/white"/>
     </LinearLayout>
 
 </RelativeLayout>
