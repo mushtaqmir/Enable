@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/ModeOfPaymentTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:text="Mode Of Payment"
+            style="@style/FontStyleHdrTab"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/modeOfPayRadioGrp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="215dp"
+            android:layout_marginTop="80dp"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:gravity="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <RadioButton
+                android:id="@+id/payByShellCashCard"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:width="350dp"
+                android:checked="false"
+                android:paddingBottom="15dp"
+                style="@style/FontStylefotterTab"
+                android:theme="@style/MyRaidoButtonTwo"
+                android:text="Pay by Shell Cash Card"
+                tools:layout_editor_absoluteX="34dp"
+                tools:layout_editor_absoluteY="145dp" />
+
+            <RadioButton
+                android:id="@+id/payByCash"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:width="320dp"
+                android:checked="false"
+                android:paddingBottom="15dp"
+                style="@style/FontStylefotterTab"
+                android:theme="@style/MyRaidoButtonTwo"
+                android:duplicateParentState="false"
+                android:text="Pay by Cash"
+                tools:layout_editor_absoluteX="265dp"
+                tools:layout_editor_absoluteY="163dp" />
+
+            <RadioButton
+                android:id="@+id/payByCard"
+                android:layout_width="310dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:width="320dp"
+                android:checked="false"
+                android:paddingBottom="15dp"
+                style="@style/FontStylefotterTab"
+                android:theme="@style/MyRaidoButtonTwo"
+                android:duplicateParentState="false"
+                android:text="Pay by Debit/Credit Card"
+                tools:layout_editor_absoluteX="265dp"
+                tools:layout_editor_absoluteY="163dp" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/confirmPayBtn"
+            style="@style/TextViewShadowTab"
+            android:layout_width="134dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="300dp"
+            android:background="@drawable/employee_textview"
+            android:gravity="center"
+            android:text="CONFIRM"
+            app:layout_constraintTop_toBottomOf="@+id/modeOfPayRadioGrp"
+
+            />
+    </FrameLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>

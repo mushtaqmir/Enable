@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/indicate"
+                style="@style/FontStyleHdr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:text="@string/indicateStr"
+                app:layout_constraintBottom_toTopOf="@+id/fuelTypeRadioGroup"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+
+            <RadioGroup
+                android:id="@+id/fuelTypeRadioGroup"
+                style="@style/FontStylefotter"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/indicate">
+
+                <RadioButton
+                    android:id="@+id/fuelTypeVPowerPetrol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"
+                    android:checked="false"
+                    android:drawableRight="@drawable/shell_v_power_petrol_150_60"
+                    android:theme="@style/MyRaidoButtonTwo" />
+
+                <RadioButton
+                    android:id="@+id/fuelTypePetrolUnleaded"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:checked="false"
+                    android:drawableRight="@drawable/shell_petrol_regular"
+                    android:theme="@style/MyRaidoButtonTwo"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/fuelTypeVPowerPetrol" />
+
+                <RadioButton
+                    android:id="@+id/fuelTypeVPowerDiesel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginRight="10dp"
+                    android:checked="false"
+                    android:drawableRight="@drawable/shell_v_power_diesel_150_60"
+                    android:theme="@style/MyRaidoButtonTwo" />
+
+                <RadioButton
+                    android:id="@+id/fuelTypeDieselUnleaded"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="0dp"
+                    android:checked="false"
+                    android:drawableRight="@drawable/shell_diesel_regular"
+                    android:theme="@style/MyRaidoButtonTwo" />
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/fuelQuantityRadioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fuelTypeRadioGroup">
+
+                <RadioButton
+                    android:id="@+id/fullTankRadioBtn"
+                    style="@style/FontStylefotter"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/fullTankStr"
+                    android:theme="@style/MyRaidoButtonTwo"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/radioButton4"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    tools:layout_editor_absoluteX="34dp"
+                    tools:layout_editor_absoluteY="145dp" />
+
+                <RadioButton
+                    android:id="@+id/amountRadioBtn"
+                    style="@style/FontStylefotter"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginLeft="57dp"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/amountStr"
+                    android:theme="@style/MyRaidoButtonTwo"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/radioButton2" />
+
+                <RadioButton
+                    android:id="@+id/quantityRadioBtn"
+                    style="@style/FontStylefotter"
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="20dp"
+                    android:text="@string/quantityStr"
+                    android:theme="@style/MyRaidoButtonTwo"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/radioButton4"
+                    app:layout_constraintRight_toRightOf="parent" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/enterQty"
+                style="@style/FontStylefotter"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="52dp"
+                android:layout_marginTop="12dp"
+                android:gravity="center_horizontal"
+                android:text="@string/enterQty"
+                app:layout_constraintBaseline_toBaselineOf="@+id/editQty"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fuelQuantityRadioGroup" />
+
+            <EditText
+                android:id="@+id/editQty"
+                style="@style/FontStylefotter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="5dp"
+                android:ems="10"
+                android:gravity="center_horizontal"
+                android:inputType="numberDecimal"
+                app:layout_constraintBottom_toTopOf="@+id/WindshieldCleanTxt"
+                app:layout_constraintHorizontal_bias="0.587"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fuelQuantityRadioGroup"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/WindshieldCleanTxt"
+                style="@style/FontStyleHdr"
+                android:layout_width="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Windshield Cleaning"
+                app:layout_constraintBottom_toTopOf="@+id/FreeOilChangeTxt"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fuelQuantityRadioGroup"
+                app:layout_constraintVertical_bias="0.547" />
+
+
+            <RadioGroup
+                android:id="@+id/WindshieldClean"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/WindshieldCleanTxt">
+
+
+                <RadioButton
+                    android:id="@+id/WindshieldCleanYes"
+                    style="@style/FontStylefotter"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="60dp"
+                    android:width="320dp"
+                    android:checked="false"
+                    android:text="Yes"
+                    android:theme="@style/MyRaidoButtonTwo"
+                    tools:layout_editor_absoluteX="34dp"
+                    tools:layout_editor_absoluteY="145dp" />
+
+                <RadioButton
+                    android:id="@+id/WindshieldCleanNo"
+                    style="@style/FontStylefotter"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="70dp"
+                    android:width="320dp"
+                    android:checked="true"
+                    android:duplicateParentState="false"
+                    android:text="No"
+                    android:theme="@style/MyRaidoButtonTwo"
+                    tools:layout_editor_absoluteX="265dp"
+                    tools:layout_editor_absoluteY="163dp" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/FreeOilChangeTxt"
+                style="@style/FontStyleHdr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal"
+                android:text="Free Oil Change"
+                app:layout_constraintBottom_toTopOf="@+id/submitButton"
+                app:layout_constraintHorizontal_bias="0.48"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/WindshieldClean"
+                app:layout_constraintVertical_bias="0.0" />
+
+
+            <RadioGroup
+                android:id="@+id/FreeOilChange"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/FreeOilChangeTxt"
+                app:layout_constraintVertical_bias="0.027">
+
+
+                <RadioButton
+                    android:id="@+id/FreeOilChangeYes"
+                    style="@style/FontStylefotter"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="60dp"
+                    android:width="320dp"
+                    android:checked="false"
+                    android:text="Yes"
+                    android:theme="@style/MyRaidoButtonTwo"
+                    tools:layout_editor_absoluteX="34dp"
+                    tools:layout_editor_absoluteY="145dp" />
+
+                <RadioButton
+                    android:id="@+id/FreeOilChangeNo"
+                    style="@style/FontStylefotter"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="70dp"
+                    android:width="320dp"
+                    android:checked="true"
+                    android:duplicateParentState="false"
+                    android:text="No"
+                    android:theme="@style/MyRaidoButtonTwo"
+                    tools:layout_editor_absoluteX="265dp"
+                    tools:layout_editor_absoluteY="163dp" />
+            </RadioGroup>
+
+
+            <Button
+                android:id="@+id/submitButton"
+                style="@style/TextViewShadowTab"
+                android:layout_width="134dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="36dp"
+                android:background="@drawable/employee_textview"
+                android:text="@string/submitButton"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/FreeOilChange" />
+
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>
