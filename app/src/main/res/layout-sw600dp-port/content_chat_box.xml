@@ -13,14 +13,14 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="760dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
         android:layout_marginTop="10dp">
 
         <ListView
             android:id="@+id/custMsgListView"
             android:layout_width="match_parent"
-            android:layout_height="755dp"
+            android:layout_height="720dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
             android:layout_marginBottom="20dp"
@@ -35,7 +35,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="765dp"
+        android:layout_marginTop="770dp"
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
@@ -84,8 +84,8 @@
             android:layout_height="match_parent"
             android:hint="Forecourt"
             android:layout_alignParentTop="true"
-            android:dropDownHeight="400dp"
-            android:dropDownWidth="200dp"
+            android:dropDownHeight="370dp"
+            android:dropDownWidth="240dp"
             android:overlapAnchor="false"
             android:popupBackground="#66FF"
             android:ems="10"
@@ -95,7 +95,8 @@
             android:ellipsize="none"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="553dp"
-            android:layout_gravity="bottom"/>
+            android:layout_gravity="bottom"
+            android:dropDownVerticalOffset="5dp"/>
 
         <ImageButton
             android:id="@+id/empBtn"

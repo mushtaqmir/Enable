@@ -84,8 +84,8 @@
             android:layout_height="wrap_content"
             android:hint="Forecourt"
             android:layout_alignParentTop="true"
-            android:dropDownHeight="400dp"
-            android:dropDownWidth="200dp"
+            android:dropDownHeight="350dp"
+            android:dropDownWidth="150dp"
             android:overlapAnchor="false"
             android:popupBackground="#66FF"
             android:ems="10"
@@ -95,7 +95,8 @@
             android:ellipsize="none"
             tools:layout_editor_absoluteX="16dp"
             tools:layout_editor_absoluteY="553dp"
-            android:layout_gravity="bottom"/>
+            android:layout_gravity="bottom"
+            android:dropDownVerticalOffset="5dp"/>
 
             <ImageButton
                 android:id="@+id/empBtn"

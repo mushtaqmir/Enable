@@ -1,5 +1,16 @@
-apply plugin: 'com.android.application'
 
+apply plugin: 'com.android.application'
+apply plugin: 'newrelic'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "com.newrelic.agent.android:agent-gradle-plugin:5.+"
+    }
+}
 android {
     compileSdkVersion 26
     defaultConfig {
@@ -12,8 +23,9 @@ android {
     }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+ 	    
         }
     }
     compileOptions {
@@ -21,6 +33,7 @@ android {
         sourceCompatibility 1.8
     }
 }
+
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -31,21 +44,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     compile 'de.codecrafters.tableview:tableview:2.8.0'
-}
-buildscript {
-  repositories {
-    mavenCentral()
-  }
-
-  dependencies {
-    classpath "com.newrelic.agent.android:agent-gradle-plugin:5.14.0"
-  }
+    compile 'com.newrelic.agent.android:android-agent:5.+'
 }
 
-repositories {
-  mavenCentral()
-}
-
-dependencies {
-  compile 'com.newrelic.agent.android:android-agent:5.14.0'
-}
+  
