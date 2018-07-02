@@ -47,7 +47,7 @@
 
             <Button
                 android:id="@+id/templateStartBtn"
-                android:layout_width="110dp"
+                android:layout_width="80dp"
                 android:layout_height="40dp"
                 android:text="Template"
                 tools:layout_editor_absoluteX="16dp"
@@ -61,7 +61,7 @@
 
             <Button
                 android:id="@+id/chatBtn"
-                android:layout_width="110dp"
+                android:layout_width="80dp"
                 android:layout_height="40dp"
                 android:text="Chat"
                 tools:layout_editor_absoluteX="16dp"
@@ -76,9 +76,22 @@
 
             <Button
                 android:id="@+id/startBtn"
-                android:layout_width="110dp"
+                android:layout_width="80dp"
                 android:layout_height="40dp"
                 android:text="Start"
+                tools:layout_editor_absoluteX="263dp"
+                tools:layout_editor_absoluteY="529dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/employee_textview"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                style="@style/TextViewShadow"/>
+            <Button
+                android:id="@+id/feedbackBtn"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:text="Feedback"
                 tools:layout_editor_absoluteX="263dp"
                 tools:layout_editor_absoluteY="529dp"
                 android:layout_marginTop="5dp"

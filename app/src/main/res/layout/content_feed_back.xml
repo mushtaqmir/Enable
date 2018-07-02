@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.mushtaqmir.app4.FeedBack"
+    tools:showIn="@layout/activity_feed_back">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <RatingBar
+            android:id="@+id/RATINGinitialvalueratingID"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:isIndicator="false"
+            android:numStars="5"
+            android:stepSize="0.1"
+            android:rating="5"
+            android:layout_marginTop="50dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp">
+
+        <ImageButton
+            android:id="@+id/microphoneBtn"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:background="@drawable/oval"
+            android:onClick="onTap"
+            android:scaleType="fitCenter"
+            android:src="@drawable/microphone"
+            android:layout_marginTop="30dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="280dp">
+
+        <EditText
+            android:id="@+id/feedbackText"
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:layout_gravity="center_vertical"
+            android:ems="10"
+            android:hint="Feedback"
+            android:inputType="textMultiLine"
+            android:windowSoftInputMode="adjustResize"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="553dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="370dp">
+
+        <Button
+            android:id="@+id/clearBtn"
+            android:layout_width="110dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:onClick="onClear"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:text="Clear"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/employee_textview"
+            style="@style/TextViewShadow"
+            android:layout_marginLeft="80dp"/>
+        <Button
+            android:id="@+id/fSubmitBtn"
+            android:layout_width="110dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:text="Submit"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/employee_textview"
+            style="@style/TextViewShadow"
+            android:layout_marginLeft="20dp"/>
+    </LinearLayout>
+
+</RelativeLayout>

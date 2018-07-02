@@ -30,6 +30,7 @@ public class ActivityMain extends ToolBarActivity {
     private TextToSpeech textToSpeech;
     private Button startBtn;
     private String message;
+    private Button feedbackBtn;
     DbHandler mydb;
     boolean doubleBackToExitPressedOnce = false;
     @Override
@@ -54,6 +55,7 @@ public class ActivityMain extends ToolBarActivity {
         chatBtn=(Button)findViewById(R.id.chatBtn);
         speakerBtn=(ImageButton)findViewById(R.id.speakerBtn);
         startBtn=(Button)findViewById(R.id.startBtn);
+        feedbackBtn=(Button)findViewById(R.id.feedbackBtn);
 
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +79,12 @@ public class ActivityMain extends ToolBarActivity {
             @Override
             public void onClick(View v) {
                 openChatActivity();
+            }
+        });
+        feedbackBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openFeedbackActivity();
             }
         });
     }
@@ -110,6 +118,12 @@ public class ActivityMain extends ToolBarActivity {
     public void openChatActivity(){
        // Intent intent=new Intent(this,ChatBox.class);
         Intent intent=new Intent(this,ChatBox.class);
+        startActivity(intent);
+    }
+
+    public void openFeedbackActivity(){
+        // Intent intent=new Intent(this,ChatBox.class);
+        Intent intent=new Intent(this,FeedBack.class);
         startActivity(intent);
     }
 

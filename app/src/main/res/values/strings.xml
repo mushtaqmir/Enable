@@ -2,7 +2,7 @@
     <string name="app_name">Enable</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_chat_box">ChatBox</string>
-<string name="welcomeMsgStr">Namaskara,I cannot speak or hear . Please help me to serve you</string>
+    <string name="welcomeMsgStr">Namaskara,I cannot speak or hear . Please help me to serve you</string>
     <string name="indicateStr">Please Indicate your choice</string>
     <string name="fuelTypePetrolStr">Petrol</string>
     <string name="fuelTypeDieselStr">Diesel</string>
@@ -16,4 +16,5 @@
     <string name="selectFuelTypeStr">Please select fuel type</string>
     <string name="submitButton">SUBMIT</string>
     <string name="enterQty">Enter</string>
+    <string name="title_activity_feed_back">FeedBack</string>
 </resources>
