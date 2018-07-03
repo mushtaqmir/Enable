@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Locale;
-import com.newrelic.agent.android.NewRelic;
+//import com.newrelic.agent.android.NewRelic;
 
 public class ActivityMain extends ToolBarActivity {
 
@@ -37,9 +37,9 @@ public class ActivityMain extends ToolBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //new relic start
-        NewRelic.withApplicationToken(
-                "AAd5b1b2780f12784d7dfc8143f761a15791a51c13"
-        ).start(this.getApplication());
+//        NewRelic.withApplicationToken(
+//                "AAd5b1b2780f12784d7dfc8143f761a15791a51c13"
+//        ).start(this.getApplication());
         //new relic end
         setContentView(R.layout.activity_main2);
         //Added for Order history

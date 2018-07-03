@@ -15,6 +15,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.RatingBar;
+import android.widget.RatingBar.OnRatingBarChangeListener;
 import android.widget.Toast;
 
 
@@ -24,28 +26,66 @@ import java.util.Locale;
 public class FeedBack extends ToolBarActivity {
     private EditText feedbackText;
     private Button fSubmitBtn;
-    private ImageButton speakerBtn;
     private TextToSpeech textToSpeech;
-
+    private RatingBar ratingBar ;
+    private String ratingSpeech;
+    private String thanksRatingSpeech;
+    private String ratingSentToMsg ="";
+    private String message ="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed_back);
-
+        ratingSpeechOut();
         feedbackText =(EditText)findViewById(R.id.feedbackText);
         fSubmitBtn=(Button)findViewById(R.id.fSubmitBtn);
+        //Added for rating bar
+        ratingBar = (RatingBar) findViewById(R.id.ratingBarFeedback);
+        ratingBar.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
+            public void onRatingChanged(RatingBar ratingBar, float rating,
+                                        boolean fromUser) {
 
+                switch (String.valueOf(rating)) {
+                    case "1.0":
+                        ratingSentToMsg = "Very Bad !!";
+                        break;
+                    case "2.0":
+                        ratingSentToMsg = "Bad !!";
+                        break;
+                    case "3.0":
+                        ratingSentToMsg = "Good !!";
+                        break;
+                    case "4.0":
+                        ratingSentToMsg = "Very Good !!";
+                        break;
+                    case "5.0":
+                        ratingSentToMsg = "Excellent !!";
+                        break;
+                    default:
+                        ratingSentToMsg = "";
+                        break;
 
+                }
+                feedbackText.setText(ratingSentToMsg + " " + message);
+            }
+        });
+        //Setting it outside as it should not ovverride
 
-        fSubmitBtn.setOnClickListener(new View.OnClickListener(){
+            fSubmitBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                String message = feedbackText.getText().toString().trim();
-                if(!message.equals("")) {
+                String messageFinal = feedbackText.getText().toString().trim();
 
-                   //new AzureConnector().connect(FeedBack.this,message);
-                    new AzureConnector().getRequest(FeedBack.this,message);
+                if(!messageFinal.equals("")) {
+
+                    //new AzureConnector().connect(FeedBack.this,message);
+                    new AzureConnector().getRequest(FeedBack.this,messageFinal);
+                    //reseting all the values
+                    message = "";
+                    ratingSentToMsg ="";
+                    ratingBar.setRating(0);
                     feedbackText.setText("");
+                    thanksRatingSpeechOut();
                     Toast.makeText(FeedBack.this,"Feedback Sent",Toast.LENGTH_LONG).show();
                     //on submit redirect to main activity
                  //  onButtonShowPopupWindowClick(v);
@@ -53,7 +93,6 @@ public class FeedBack extends ToolBarActivity {
                 }
             }
         });
-
 
 
       /*
@@ -118,22 +157,27 @@ public class FeedBack extends ToolBarActivity {
         if(request_code == 200) {
             if (result_code == RESULT_OK && intent != null) {
                 ArrayList<String> result = intent.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                String message = result.get(0);
-                if (!message.equals("")) {
-
-                    feedbackText.setText(message);
+                message = result.get(0);
+                String message1 ="";
+                if (!message.equals("") ) {
+                    message1 = ratingSentToMsg+" "+message;
+                    message1.trim();// if rating is not done at this point
+                    feedbackText.setText(message1);
 
                 }
             }
         }
     }
     public void onClear(View v){
-
         if(v.getId()==R.id.clearBtn){
-
+            message = "";
+            ratingSentToMsg ="";
+            ratingBar.setRating(0);
             feedbackText.setText("");
+
+
         }
-    }
+      }
     public void openMainActivity(){
         // Intent intent=new Intent(this,ChatBox.class);
         Intent intent=new Intent(this,ActivityMain.class);
@@ -166,4 +210,34 @@ public void onButtonShowPopupWindowClick(View view) {
 //        }
 //    });
 }
+
+    public void ratingSpeechOut(){
+        ratingSpeech="Please give your feedback.";
+        Toast.makeText(FeedBack.this,ratingSpeech,Toast.LENGTH_LONG).show();
+        textToSpeech=new TextToSpeech(FeedBack.this, new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if(status == TextToSpeech.SUCCESS){
+                    textToSpeech.setLanguage(Locale.US);
+                    textToSpeech.speak(ratingSpeech, TextToSpeech.QUEUE_ADD, null);
+                }
+            }
+        });
+
+    }
+    public void thanksRatingSpeechOut(){
+        thanksRatingSpeech="Thank you for the feedback.";
+        //Toast.makeText(FeedBack.this,thanksRatingSpeech,Toast.LENGTH_LONG).show();
+        textToSpeech=new TextToSpeech(FeedBack.this, new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if(status == TextToSpeech.SUCCESS){
+                    textToSpeech.setLanguage(Locale.US);
+                    textToSpeech.speak(thanksRatingSpeech, TextToSpeech.QUEUE_ADD, null);
+                }
+            }
+        });
+
+    }
+
 }

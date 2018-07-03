@@ -146,4 +146,9 @@
         <item name="android:shadowRadius">1</item>
     </style>
 
-</resources>
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">#c51162</item>
+        <item name="colorControlActivated">#000000</item>
+    </style>
+
+   </resources>
