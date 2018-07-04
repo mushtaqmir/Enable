@@ -15,8 +15,6 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
-import android.widget.RatingBar;
-import android.widget.RatingBar.OnRatingBarChangeListener;
 import android.widget.Toast;
 
 
@@ -27,10 +25,8 @@ public class FeedBack extends ToolBarActivity {
     private EditText feedbackText;
     private Button fSubmitBtn;
     private TextToSpeech textToSpeech;
-    private RatingBar ratingBar ;
     private String ratingSpeech;
     private String thanksRatingSpeech;
-    private String ratingSentToMsg ="";
     private String message ="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,9 +36,9 @@ public class FeedBack extends ToolBarActivity {
         feedbackText =(EditText)findViewById(R.id.feedbackText);
         fSubmitBtn=(Button)findViewById(R.id.fSubmitBtn);
         //Added for rating bar
-        ratingBar = (RatingBar) findViewById(R.id.ratingBarFeedback);
-        ratingBar.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
-            public void onRatingChanged(RatingBar ratingBar, float rating,
+//        ratingBar = (RatingBar) findViewById(R.id.ratingBarFeedback);
+  //      ratingBar.setOnRatingBarChangeListener(new OnRatingBarChangeListener() {
+    /*        public void onRatingChanged(RatingBar ratingBar, float rating,
                                         boolean fromUser) {
 
                 switch (String.valueOf(rating)) {
@@ -69,7 +65,7 @@ public class FeedBack extends ToolBarActivity {
                 feedbackText.setText(ratingSentToMsg + " " + message);
             }
         });
-        //Setting it outside as it should not ovverride
+    */    //Setting it outside as it should not ovverride
 
             fSubmitBtn.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -82,8 +78,6 @@ public class FeedBack extends ToolBarActivity {
                     new AzureConnector().getRequest(FeedBack.this,messageFinal);
                     //reseting all the values
                     message = "";
-                    ratingSentToMsg ="";
-                    ratingBar.setRating(0);
                     feedbackText.setText("");
                     thanksRatingSpeechOut();
                     Toast.makeText(FeedBack.this,"Feedback Sent",Toast.LENGTH_LONG).show();
@@ -157,11 +151,13 @@ public class FeedBack extends ToolBarActivity {
         if(request_code == 200) {
             if (result_code == RESULT_OK && intent != null) {
                 ArrayList<String> result = intent.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
-                message = result.get(0);
                 String message1 ="";
-                if (!message.equals("") ) {
-                    message1 = ratingSentToMsg+" "+message;
-                    message1.trim();// if rating is not done at this point
+                message1 = result.get(0);
+                message = feedbackText.getText().toString().trim();
+
+                if (!message1.equals("") ) {
+                    message1 = message +" "+ message1;
+                    message1 = message1.trim() +".";
                     feedbackText.setText(message1);
 
                 }
@@ -171,16 +167,12 @@ public class FeedBack extends ToolBarActivity {
     public void onClear(View v){
         if(v.getId()==R.id.clearBtn){
             message = "";
-            ratingSentToMsg ="";
-            ratingBar.setRating(0);
             feedbackText.setText("");
-
-
         }
       }
     public void openMainActivity(){
-        // Intent intent=new Intent(this,ChatBox.class);
         Intent intent=new Intent(this,ActivityMain.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 //popup

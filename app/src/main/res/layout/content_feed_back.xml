@@ -11,24 +11,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp">
-
-        <RatingBar
-            android:id="@+id/ratingBarFeedback"
-            android:layout_width="240dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginLeft="80dp"
-            android:numStars="5"
-            android:stepSize="1"
-            android:theme="@style/RatingBar"
-            android:background="#ffc400"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp">
+        android:layout_marginTop="60dp">
 
         <ImageButton
             android:id="@+id/microphoneBtn"
@@ -45,7 +28,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="280dp">
+        android:layout_marginTop="220dp">
 
         <EditText
             android:id="@+id/feedbackText"
@@ -65,7 +48,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="370dp">
+        android:layout_marginTop="330dp">
 
         <Button
             android:id="@+id/clearBtn"
