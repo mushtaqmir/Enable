@@ -47,9 +47,11 @@ public class AzureConnector {
                     public void onErrorResponse(VolleyError error) {
                         Log.d("RESTERROR",error.toString());
 
+
                     }
                 }
         );
+        Log.d("OBJECT",objectRequest.toString());
         requestQueue.add(objectRequest);
 
    }
