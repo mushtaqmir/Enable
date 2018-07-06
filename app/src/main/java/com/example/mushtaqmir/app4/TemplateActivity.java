@@ -40,7 +40,7 @@ public class TemplateActivity extends ToolBarActivity {
         catch (IOException e){
             e.printStackTrace();
         }
-        String[] messageList={"Hi, how are you.","How can i help you.","Welcome"};
+        String[] messageList={"Hi!, how are you?","How can i help you?","Welcome"};
         msgList=new ArrayList<String>(Arrays.asList(messageList));
 
        // ListAdapter templateAdapter= new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,messageList);

@@ -95,7 +95,8 @@
         <activity
             android:name=".FeedBack"
             android:label="@string/title_activity_feed_back"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

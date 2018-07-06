@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context="com.example.mushtaqmir.app4.TemplateActivity">
 
-
-
     <include layout="@layout/content_main" />
 
 
