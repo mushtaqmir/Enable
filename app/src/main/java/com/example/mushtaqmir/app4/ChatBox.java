@@ -14,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatAutoCompleteTextView;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -48,7 +49,7 @@ public class ChatBox extends ToolBarActivity implements TextWatcher{
     List<String> empMsgList;
     private  EditText custText;
     private  ImageButton custBtn;
-    AutoCompleteTextViewImpl empText;
+    AutoCompleteTextView empText;
     ImageButton empBtn;
     TextToSpeech textToSpeech;
     DbHandler dbHandler;
@@ -94,8 +95,8 @@ public class ChatBox extends ToolBarActivity implements TextWatcher{
         });
     //Autocomplete i chat for suggestions
 
-      // empText=(AppCompatAutoCompleteTextView) findViewById(R.id.empText);
-        empText=(AutoCompleteTextViewImpl)findViewById(R.id.empText);
+       empText=(AutoCompleteTextView) findViewById(R.id.empText);
+        //empText=(AutoCompleteTextViewImpl)findViewById(R.id.empText);
        // empText=new AppCompatAutoCompleteTextView(this);
        // empText=(AutoCompleteTextView) empText;
 //        Rect outRect=new Rect();
@@ -123,9 +124,11 @@ public class ChatBox extends ToolBarActivity implements TextWatcher{
                 new AdapterView.OnItemClickListener(){
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        Log.d("custMsgListView","item clicked");
                        Message messageObj= (Message) parent.getItemAtPosition(position);
                        if(messageObj.isEmployee()) {
                            String msg = String.valueOf(messageObj.getMessage());
+                           Log.d("OnTapMessage",msg);
                            //insert code here
                            textToSpeech = new TextToSpeech(ChatBox.this, new TextToSpeech.OnInitListener() {
                                @Override
@@ -133,7 +136,7 @@ public class ChatBox extends ToolBarActivity implements TextWatcher{
                                    if (status == TextToSpeech.SUCCESS) {
                                        textToSpeech.setLanguage(Locale.US);
                                        //   textToSpeech.setPitch((float) 0.6);
-                                       textToSpeech.speak(msg, TextToSpeech.QUEUE_FLUSH, null);
+                                       textToSpeech.speak(msg, TextToSpeech.QUEUE_ADD, null);
                                    }
                                }
                            });

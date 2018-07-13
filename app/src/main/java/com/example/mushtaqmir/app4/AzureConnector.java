@@ -30,29 +30,38 @@ public class AzureConnector {
     public void getRequest(Context ctx,String message) {
 
         String url="http://shellsandbox.azurewebsites.net/twitter?text="+message;
-       com.android.volley.RequestQueue requestQueue= Volley.newRequestQueue(ctx);
-        JsonObjectRequest objectRequest=new JsonObjectRequest(
-                com.android.volley.Request.Method.GET,
-                url,
-                null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                Log.d("RESTRESPONSE",response.toString());
+        com.android.volley.RequestQueue requestQueue=null;
+        try{
+            requestQueue = Volley.newRequestQueue(ctx);
+            JsonObjectRequest objectRequest=new JsonObjectRequest(
+                    com.android.volley.Request.Method.GET,
+                    url,
+                    null,
+                    new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+                            Log.d("RESTRESPONSE",response.toString());
+                        }
+                    },
+
+                    new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            Log.d("RESTERROR",error.toString());
+
+
+                        }
                     }
-                },
+            );
+            Log.d("Request Object",objectRequest.toString());
+            requestQueue.add(objectRequest);
+        }catch (Exception e){
+            Log.d("Exception",e.getMessage());
+        }
+       finally {
+           // requestQueue.stop();
+        }
 
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.d("RESTERROR",error.toString());
-
-
-                    }
-                }
-        );
-        Log.d("OBJECT",objectRequest.toString());
-        requestQueue.add(objectRequest);
 
    }
 }

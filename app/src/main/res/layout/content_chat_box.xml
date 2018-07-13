@@ -78,7 +78,7 @@
             android:background="@android:color/white"
             android:layout_gravity="center_vertical"/>
 
-        <com.example.mushtaqmir.app4.AutoCompleteTextViewImpl
+        <AutoCompleteTextView
             android:id="@+id/empText"
             android:layout_width="145dp"
             android:layout_height="wrap_content"
