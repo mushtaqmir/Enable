@@ -6,13 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.speech.tts.TextToSpeech;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-//import org.apache.http.entity.StringEntity;
-import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.Toast;
@@ -24,7 +23,8 @@ import java.util.Locale;
 public class FeedBack extends ToolBarActivity {
     private EditText feedbackText;
     private Button fSubmitBtn;
-    private TextToSpeech textToSpeech;
+    private TextToSpeech textToSpeechFeedback;
+    private TextToSpeech textToSpeechFeedbackThanks;
     private String ratingSpeech;
     private String thanksRatingSpeech;
     private String message ="";
@@ -73,14 +73,14 @@ public class FeedBack extends ToolBarActivity {
                 String messageFinal = feedbackText.getText().toString().trim();
 
                 if(!messageFinal.equals("")) {
-
+                    Log.d("Message final string " , messageFinal);
                     //new AzureConnector().connect(FeedBack.this,message);
                     new AzureConnector().getRequest(FeedBack.this,messageFinal);
                     //reseting all the values
                     message = "";
                     feedbackText.setText("");
                     thanksRatingSpeechOut();
-                    Toast.makeText(FeedBack.this,"Feedback Sent",Toast.LENGTH_LONG).show();
+
                     //on submit redirect to main activity
                  //  onButtonShowPopupWindowClick(v);
                     openMainActivity();
@@ -206,30 +206,30 @@ public void onButtonShowPopupWindowClick(View view) {
     public void ratingSpeechOut(){
         ratingSpeech="Please give your feedback.";
         Toast.makeText(FeedBack.this,ratingSpeech,Toast.LENGTH_LONG).show();
-        textToSpeech=new TextToSpeech(FeedBack.this, new TextToSpeech.OnInitListener() {
+        textToSpeechFeedback = new TextToSpeech(FeedBack.this, new TextToSpeech.OnInitListener() {
             @Override
-            public void onInit(int status) {
-                if(status == TextToSpeech.SUCCESS){
-                    textToSpeech.setLanguage(Locale.US);
-                    textToSpeech.speak(ratingSpeech, TextToSpeech.QUEUE_ADD, null);
+            public void onInit(int i) {
+                if(i == TextToSpeech.SUCCESS){
+                    textToSpeechFeedback.setLanguage(Locale.US);
+                    textToSpeechFeedback.speak(ratingSpeech, TextToSpeech.QUEUE_ADD, null);
                 }
             }
         });
 
     }
     public void thanksRatingSpeechOut(){
+
         thanksRatingSpeech="Thank you for the feedback.";
-        //Toast.makeText(FeedBack.this,thanksRatingSpeech,Toast.LENGTH_LONG).show();
-        textToSpeech=new TextToSpeech(FeedBack.this, new TextToSpeech.OnInitListener() {
+        textToSpeechFeedbackThanks=new TextToSpeech(FeedBack.this, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
                 if(status == TextToSpeech.SUCCESS){
-                    textToSpeech.setLanguage(Locale.US);
-                    textToSpeech.speak(thanksRatingSpeech, TextToSpeech.QUEUE_ADD, null);
+                    textToSpeechFeedbackThanks.setLanguage(Locale.US);
+                    textToSpeechFeedbackThanks.speak(thanksRatingSpeech, TextToSpeech.QUEUE_ADD, null);
                 }
             }
         });
-
+        Toast.makeText(FeedBack.this,"Feedback Sent",Toast.LENGTH_LONG).show();
     }
 
 }

@@ -307,9 +307,9 @@
 
             <Button
                 android:id="@+id/submitButton"
-                style="@style/TextViewShadowTab"
-                android:layout_width="134dp"
-                android:layout_height="70dp"
+                style="@style/TextViewShadow"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="36dp"
                 android:background="@drawable/employee_textview"
                 android:text="@string/submitButton"

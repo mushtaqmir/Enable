@@ -93,9 +93,9 @@
 
         <Button
             android:id="@+id/confirmPayBtn"
-            style="@style/TextViewShadowTab"
-            android:layout_width="134dp"
-            android:layout_height="70dp"
+            style="@style/TextViewShadow"
+            android:layout_width="110dp"
+            android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="300dp"
             android:background="@drawable/employee_textview"
