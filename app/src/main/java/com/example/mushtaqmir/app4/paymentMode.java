@@ -41,6 +41,7 @@ public class paymentMode extends ToolBarActivity {
             final RadioButton payByShellCashCard = (RadioButton) findViewById(R.id.payByShellCashCard);
             final RadioButton payByCash = (RadioButton) findViewById(R.id.payByCash);
             final RadioButton payByCard = (RadioButton) findViewById(R.id.payByCard);
+            final RadioButton payByShellApp = (RadioButton) findViewById(R.id.payByShellApp);
 
             final Button confirmPayBtn = (Button) findViewById(R.id.confirmPayBtn);
             if (orderDetails != null) {
@@ -59,6 +60,11 @@ public class paymentMode extends ToolBarActivity {
                         }
                         else if(payByCard.isChecked()){
                             orderDetails.setModeOfPayment(payByCard.getText().toString());
+                            buttonEnable=1;
+                        }
+
+                        else if(payByShellApp.isChecked()){
+                            orderDetails.setModeOfPayment(payByShellApp.getText().toString());
                             buttonEnable=1;
                         }
                     }
