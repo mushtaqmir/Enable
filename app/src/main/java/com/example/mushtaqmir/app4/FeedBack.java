@@ -204,7 +204,7 @@ public void onButtonShowPopupWindowClick(View view) {
 }
 
     public void ratingSpeechOut(){
-        ratingSpeech="Please give your feedback.";
+        ratingSpeech="Please tap on mic or enter text for feedback.";
         Toast.makeText(FeedBack.this,ratingSpeech,Toast.LENGTH_LONG).show();
         textToSpeechFeedback = new TextToSpeech(FeedBack.this, new TextToSpeech.OnInitListener() {
             @Override
